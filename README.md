@@ -1,8 +1,8 @@
-DRAFT
-Qubit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers. 
+# QuBit Universal Tag Specification Version 0.9 (DRAFT)
+
+Qubit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
 Below you will see 4 different main objects:
-
 * Page
 * User
 * Product
@@ -22,17 +22,25 @@ window.qubitUniversalVariables = {
 	 * Variables that may live on any page which describe the page itself
      *********************************************************************/
 	page: {
-		category: "<The type of page this is, eg: home, product, category, search, basket, checkout, confirmation>",
-		subCategory: "<A more detailed description of the page, eg: if Category is \"category\", subCategory may be \"Mens Shirts\">"
+        // category: String - The type of page this is, i.e: home, product, category, search, basket, checkout, confirmation
+		category: "product",
+
+        // subCategory: String A more detailed description of the page, eg: if Category is "category", subCategory may be "Mens Shirts"
+		subCategory: "Mens Shirts"
 	},
 
 	/*********************************************************************
 	 * Variables that may live on any page which describe the current user
 	 *********************************************************************/
 	user: {
-		name: "The name of the user",
-		username: "<The user  name of the logged in user>",
-		email: "<The email address of the logged in user>"
+        // name: String - The name of the user
+		name: "Name",
+
+        // username: String - The user  name of the logged in user
+		username: "username",
+
+        // email: String - The email address of the logged in user
+		email: "user@example.com"
 	},
 
     /*****************************************************************************
