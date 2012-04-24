@@ -1,4 +1,4 @@
-# QuBit Universal Tag Specification Version 0.9 (DRAFT)
+# QuBit Universal Variables Specification Version 0.9 (DRAFT)
 
 Qubit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
