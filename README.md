@@ -40,7 +40,7 @@ window.qubitUniversalVariables = {
      *****************************************************************************/
 
 	product: {
-		// id: String - The identifier for the item that is being viewed - this is product Id, not SKU id.
+		// id: String - The identifier for the item that is being viewed - this is product Id, not SKU id
 		id: "ABC123",
 
 		// name: String - The name of the product that is being viewed
@@ -55,22 +55,29 @@ window.qubitUniversalVariables = {
 		// subCategory: String - The sub-category of the product that is being viewed
 		subCategory: "Trainers",
 
-        // sku: String - The SKU code for the item that is being viewed - this should be unique for items which differ by colour or size. This is for the case where only one SKU are selectable
+        // sku: String - The SKU code for the item that is being viewed - this should be unique for items
+		// which differ by colour or size. This is for the case where only one SKU are selectable
 		sku: "12345678",
 
-        // Array: [String, String, ...] - An SKU code for each item that is being viewed - these should be unique for items which differ by colour or size. This is for the case where multiple SKUs are selectable
+        // Array: [String, String, ...] - An SKU code for each item that is being viewed - these should 
+		// be unique for items which differ by colour or size. This is for the case where multiple SKUs 
+		// are selectable
 		skus: ["1111111", "222222", "33333"],
 
-        // Array: [String, String, ...] - An array of the sizes which are presented for the product being viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B", "C", "D", "DD"]
+        // Array: [String, String, ...] - An array of the sizes which are presented for the product being
+		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B", 
+		// "C", "D", "DD"]
 		sizes: ["8","9","10"],
 
 		// unitPrice: Number - The cost of a single unit of the item that is being viewed
 		unitPrice: 14.99,
 
-		// unitSalePrice: Number: The price of the item taking into account any sales or special circumstances
+		// unitSalePrice: Number: The price of the item taking into account any sales or special 
+		// circumstances
 		unitSalePrice: 10.99,
 
-		// unitPriceCurrency: String: The currency in which the unit price is displayed. Three letter ISO code: GBP, EUR, USD etc.
+		// unitPriceCurrency: String: The currency in which the unit price is displayed. Three letter ISO
+		// code: GBP, EUR, USD etc.
 		unitPriceCurrency: "GBP"
 	},
 
@@ -79,28 +86,34 @@ window.qubitUniversalVariables = {
 	 **************************************************************************/
 	basket: {
 
-        // subtotal: Number - A valid number with the total cost of the basket including any known tax per item, but not including shipping or discounts
+        // subtotal: Number - A valid number with the total cost of the basket including any known tax per
+		// item, but not including shipping or discounts
 		subtotal: 12.00,
 
-        // total: Number - A valid number with the total cost of the basket including any known tax, shipping and discounts
+        // total: Number - A valid number with the total cost of the basket including any known tax, 
+		// shipping and discounts
 		total: 123.00,
 
         // tax: Number - A valid number with the total amount of potential tax included in the order
 		tax: 12.00,
 
-        // shipping: Number - A valid number with the total amount of potential shipping costs included in the order
+        // shipping: Number - A valid number with the total amount of potential shipping costs included in
+		// the order
 		shipping: 1.00,
 
-        // currency: String - The standard letter code in capitals for the currency type in which the order is being paid, eg: EUR, USD, GBP
+        // currency: String - The standard letter code in capitals for the currency type in which the
+		// order is being paid, eg: EUR, USD, GBP
 		currency: "GBP",
 
         // items: Array - An array of item objects
 		items: [
             {
-                // productId: String - The identifier for the item in the basket - this must be the same for items which differ only by colour or size
+                // productId: String - The identifier for the item in the basket - this must be the same
+				// for items which differ only by colour or size
     			productId: "ABC123",
 
-                // productSku: String - The SKU code for the item in the basket - this should be unique for items which differ by colour or size
+                // productSku: String - The SKU code for the item in the basket - this should be unique
+				// for items which differ by colour or size
     			productSku: "DEF456",
 
                 // productName: String - The name of the product that is in the basket
@@ -115,13 +128,15 @@ window.qubitUniversalVariables = {
                 // productSubCategory: String - The sub-category of the product that is in the basket
     			productSubCategory: "Men's Clothing",
 
-                // productUnitPrice: Number - A number with the cost of a single unit of the item in the basket
+                // productUnitPrice: Number - A number with the cost of a single unit of the item in the
+				// basket
     			productUnitPrice: 12.30,
 
                 // quantity: Number - The number of units of this item in the basket
     			quantity: 1,
 
-                // salePrice: Number - The price of the item taking into account any sales due to vouchers, or special circumstances
+                // salePrice: Number - The price of the item taking into account any sales due to vouchers
+				// or special circumstances
     			salePrice: 10.30
 			},
 
@@ -148,7 +163,8 @@ window.qubitUniversalVariables = {
         // orderId: String - A unique identifier for the order
 		orderId: "WEB123456",
 
-        // orderSubtotal: Number - A valid number with the total amount the order including tax per item, but not including shipping or discounts
+        // orderSubtotal: Number - A valid number with the total amount the order including tax per item,
+		// but not including shipping or discounts
 		orderSubtotal: 123.00,
 
         // orderTotal: Number - A valid number with the total cost including tax, shipping and discounts
@@ -157,10 +173,12 @@ window.qubitUniversalVariables = {
         // orderTax: Number - A valid number with the total amount of tax included in the order
 		orderTax: 10.00,
 
-        // orderShipping: Number - A valid number with the total amount of shipping costs included in the order
+        // orderShipping: Number - A valid number with the total amount of shipping costs included in the
+		// order
 		orderShipping: 0.00,
 
-        // orderCurrency: String - The standard letter code in captials for the currency type in which the order is being paid, eg EUR, USD, GBP
+        // orderCurrency: String - The standard letter code in captials for the currency type in which
+		// the order is being paid, eg EUR, USD, GBP
 		orderCurrency: "GBP",
 
         // city: String - The city to which the order is to be dispatched
@@ -175,15 +193,18 @@ window.qubitUniversalVariables = {
         // voucher: String - The voucher code entered
 		voucher: "MYVOUCHER",
 
-        // voucherDiscount: Number - A valid number with the total amount of discount due to the voucher entered
+        // voucherDiscount: Number - A valid number with the total amount of discount due to the voucher
+		// entered
 		voucherDiscount: 0.00
 
 		items: [
 			{
-                // productId: String - The identifier for the item that has been sold - this must be the same for items which differ only by colour or size.
+                // productId: String - The identifier for the item that has been sold - this must be the
+				// same for items which differ only by colour or size.
     			productId: "ABC234"
 
-    			// productSku: String - The SKU code for the item that has been sold. This should be unique for items which differ by colour or size.
+    			// productSku: String - The SKU code for the item that has been sold. This should be
+				// unique for items which differ by colour or size.
                 productSku: "DEF456",
 
     			// productName: String - The name of the product that has been sold.
@@ -194,17 +215,23 @@ window.qubitUniversalVariables = {
 
     			// productCategory: String - The category of the product that has been sold.
                 productCategory: "Clothing",
+				
+				// productSubCategory: String - The sub-category of the product that is in the basket
+    			productSubCategory: "Men's Clothing",
 
-    			// productUnitPrice: Number - A number with the cost of a single unit of the item being sold.
+    			// productUnitPrice: Number - A number with the cost of a single unit of the item being
+				// sold.
                 productUnitPrice: 13.30,
 
     			// quantity: Number - The number of units being sold.
                 quantity: 1,
 
-    			// salePrice: Number - The price of the item taking into account any sales due to vouchers, or special circumstances.
-                saleAmount: 12.30
+    			// salePrice: Number - The price of the item taking into account any sales due to 
+				// vouchers, or special circumstances.
+                salePrice: 12.30
 
-                // voucher: Number - The voucher code entered (only necessary if different from transaction)
+                // voucher: Number - The voucher code entered (only necessary if different from 
+				// transaction)
     			voucher: "MYVOUCHER"
 			},
 			{
