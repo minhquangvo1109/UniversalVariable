@@ -11,8 +11,8 @@ window.qubitUniversalVariables = {
 		category: "<The type of page this is, eg: home, product, category, search, basket, checkout, confirmation>",
 		subCategory: "<A more detailed description of the page, eg: if Category is \"category\", subCategory may be \"Mens Shirts\">"
 	},
- 
-	/**** 
+
+	/****
 	* Variables that may live on any page which describe the current user
 	****/
 	user: {
@@ -21,42 +21,46 @@ window.qubitUniversalVariables = {
 		email: "<The email address of the logged in user>"
 	},
 
-	/**** 
+	/****
 	* Variables which describe a single product that is being viewed in the page
 	****/
 
 	product: {
-		// id: String: The identifier for the item that is being viewed - this is product Id, not SKU id.
+		// id: String - The identifier for the item that is being viewed - this is product Id, not SKU id.
 		id: "ABC123",
-		
-		// name: String: The name of the product that is being viewed
+
+		// name: String - The name of the product that is being viewed
 		name: "XYZShoes",
-		
-		// manufacturer: String: The manufactuter of the product that is being viewed
+
+		// manufacturer: String - The manufactuter of the product that is being viewed
 		manufacturer: "Acme Corp",
-		
-		// category: String: The category of the product that is being viewed
+
+		// category: String - The category of the product that is being viewed
 		category: "Shoe",
-		
-		// subCategory: String: The sub-category of the product that is being viewed 
+
+		// subCategory: String - The sub-category of the product that is being viewed
 		subCategory: "Trainers",
-		
-		
-		sku: "<The SKU code for the item that is being viewed - this should be unique for items which differ by colour or size. This is for the case where only one SKU are selectable>",
-		skus: ["1111111", "222222", "33333"] //<An SKU code for each item that is being viewed - these should be unique for items which differ by colour or size. This is for the case where multiple SKUs are selectable>",
-		sizes: ["8","9","10"], //or ["small", "medium", "large"] or ["A", "B", "C", "D", "DD"]  - an array of the sizes which are presented for the product being viewed. Each element should be a string.
-		
-		// unitPrice: Number: The cost of a single unit of the item that is being viewed
+
+        // sku: String - The SKU code for the item that is being viewed - this should be unique for items which differ by colour or size. This is for the case where only one SKU are selectable
+		sku: "12345678",
+
+        // Array: [String, String, ...] - An SKU code for each item that is being viewed - these should be unique for items which differ by colour or size. This is for the case where multiple SKUs are selectable
+		skus: ["1111111", "222222", "33333"],
+
+        // Array: [String, String, ...] - An array of the sizes which are presented for the product being viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B", "C", "D", "DD"]
+		sizes: ["8","9","10"],
+
+		// unitPrice: Number - The cost of a single unit of the item that is being viewed
 		unitPrice: 14.99,
-		
+
 		// unitSalePrice: Number: The price of the item taking into account any sales or special circumstances
 		unitSalePrice: 10.99,
-		
+
 		// unitPriceCurrency: String: The currency in which the unit price is displayed. Three letter ISO code: GBP, EUR, USD etc.
 		unitPriceCurrency: "GBP"
 	},
 
-	/**** 
+	/****
 	* Variables which describe the current state of the user�s shopping basket
 	****/
 	basket: {
@@ -91,7 +95,7 @@ window.qubitUniversalVariables = {
 	 ]
 	},
 
-	/*** 
+	/***
 	* Variables which describe a completed purchase
 	***/
 	transaction: {
@@ -121,7 +125,7 @@ window.qubitUniversalVariables = {
 			{
 			productId: "<The identifier for the item that has been sold - this must be the same for items which differ only by colour or size>"
 			productSku: "<The SKU code for the item that has been sold - this should be unique for items which differ by colour or size>",
-			productName: "<The name of the product that has been sold>",    
+			productName: "<The name of the product that has been sold>",
 			productManufacturer: "<The manufacturer of the product that has been sold>",
 			productCategory: "<The category of the product that has been sold>",
 			productUnitPrice: <A number with the cost of a single unit of the item being sold>,
