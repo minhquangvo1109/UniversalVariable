@@ -60,9 +60,9 @@ window.qubitUniversalVariables = {
 		unitPriceCurrency: "GBP"
 	},
 
-	/****
-	* Variables which describe the current state of the user�s shopping basket
-	****/
+	/**************************************************************************
+	 * Variables which describe the current state of the user's shopping basket
+	 **************************************************************************/
 	basket: {
 
         // subtotal: Number - A valid number with the total cost of the basket including any known tax per item, but not including shipping or discounts
@@ -131,41 +131,80 @@ window.qubitUniversalVariables = {
 	 * Variables which describe a completed purchase
 	 ***********************************************/
 	transaction: {
-		orderId: "<a unique identifier for the order>",
-		orderSubtotal: <a valid number with the total amount the order including tax per item, but not including shipping or discounts>,
-		orderTotal: <a valid number with the total cost including tax, shipping and discounts>,
-		orderTax: <a valid number with the total amount of tax included in the order>,
-		orderShipping: <a valid number with the total amount of shipping costs included in the order>,
-		orderCurrency: "<The standard letter code in captials for the currency type in which the order is being paid, eg EUR, USD, GBP>",
-		city: "<the city to which the order is to be dispatched>",
-		state: "<the state to which the order is to be dispatched>",
-		country: "<the country to which the order is to be dispatched>",
-		voucher: "<The voucher code entered>",
-		voucherDiscount: <a valid number with the total amount of discount due to the voucher entered>
+        // orderId: String - A unique identifier for the order
+		orderId: "WEB123456",
+
+        // orderSubtotal: Number - A valid number with the total amount the order including tax per item, but not including shipping or discounts
+		orderSubtotal: 123.00,
+
+        // orderTotal: Number - A valid number with the total cost including tax, shipping and discounts
+		orderTotal: 130.00,
+
+        // orderTax: Number - A valid number with the total amount of tax included in the order
+		orderTax: 10.00,
+
+        // orderShipping: Number - A valid number with the total amount of shipping costs included in the order
+		orderShipping: 0.00,
+
+        // orderCurrency: String - The standard letter code in captials for the currency type in which the order is being paid, eg EUR, USD, GBP
+		orderCurrency: "GBP",
+
+        // city: String - The city to which the order is to be dispatched
+		city: "London",
+
+        // state: String - The state to which the order is to be dispatched
+		state: "London",
+
+        // country: String - The country to which the order is to be dispatched
+		country: "UK",
+
+        // voucher: String - The voucher code entered
+		voucher: "MYVOUCHER",
+
+        // voucherDiscount: Number - A valid number with the total amount of discount due to the voucher entered
+		voucherDiscount: 0.00
+
 		items: [
 			{
-			productId: "<The identifier for the item that has been sold - this must be the same for items which differ only by colour or size>"
-			productSku: "<The SKU code for the item that has been sold - this should be unique for items which differ by colour or size>",
-			productName: "<The name of the product that has been sold>",
-			productManufacturer: "<The manufacturer of the product that has been sold>",
-			productCategory: "<The category of the product that has been sold>",
-			productUnitPrice: <A number with the cost of a single unit of the item being sold>,
-			quantity: <The number of units being sold>,
-			saleAmount: "<The price of the item taking into account any sales due to vouchers, or special circumstances>",
-			voucher: "<The voucher code entered (only necessary if different from transaction)>"
+                // productId: String - The identifier for the item that has been sold - this must be the same for items which differ only by colour or size.
+    			productId: "ABC234"
+
+    			// productSku: String - The SKU code for the item that has been sold. This should be unique for items which differ by colour or size.
+                productSku: "DEF456",
+
+    			// productName: String - The name of the product that has been sold.
+                productName: "Blue T-Shirt",
+
+    			// productManufacturer: String - The manufacturer of the product that has been sold.
+                productManufacturer: "Manufacturer Name",
+
+    			// productCategory: String - The category of the product that has been sold.
+                productCategory: "Clothing",
+
+    			// productUnitPrice: Number - A number with the cost of a single unit of the item being sold.
+                productUnitPrice: 13.30,
+
+    			// quantity: Number - The number of units being sold.
+                quantity: 1,
+
+    			// salePrice: Number - The price of the item taking into account any sales due to vouchers, or special circumstances.
+                saleAmount: 12.30
+
+                // voucher: Number - The voucher code entered (only necessary if different from transaction)
+    			voucher: "MYVOUCHER"
 			},
 			{
-			productId: "<The identifier for the item that has been sold - this must be the same for items which differ only by colour or size>"
-			productSku: "<The SKU code for the item that has been sold - this should be unique for items which differ by colour or size>",
-			productName: "<The name of the product that has been sold>",
-			productManufacturer: "<The manufacturer of the product that has been sold>",
-			productCategory: "<The category of the product that has been sold>",
-			productUnitPrice: <A number with the cost of a single unit of the item being sold>,
-			quantity: <The number of units being sold>,
-			saleAmount: "<The price of the item taking into account any sales due to vouchers, or special circumstances>",
-			voucher: "<The voucher code entered (only necessary if different from transaction)>"
+    			productId: "ABC456"
+    			productSku: "DEF678",
+    			productName: "White T-Shirt",
+    			productManufacturer: "Manufacturer Name",
+    			productCategory: "Clothing",
+    			productUnitPrice: 12.30,
+    			quantity: 1,
+    			saleAmount: 10.30,
+    			voucher: "MYVOUCHER"
 			}
-			]
+		]
 	}
 }
 </script>
