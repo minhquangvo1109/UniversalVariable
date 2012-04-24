@@ -3,11 +3,11 @@
 Qubit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
 Below you will see 4 different main objects:
-* Page
-* User
-* Product
-* Basket
-* Transaction
+* Page: Details of the page type and category
+* User: Details of the logged in user, or the visitor
+* Product: Details of the product the user is currently viewing
+* Basket: Details of the products the user has added to the
+* Transaction: Details of a purchase or transaction
 
 QuBit OpenTag recommends creating the releavant JavaScript object on your page prior to the OpenTag container script. This will assure the values are present on the page when a script tries to access them.
 
