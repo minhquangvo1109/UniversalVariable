@@ -22,10 +22,12 @@ window.qubitUniversalVariables = {
 	 * Variables that may live on any page which describe the page itself
      *********************************************************************/
 	page: {
-        // category: String - The type of page this is, i.e: home, product, category, search, basket, checkout, confirmation
+        // category: String - The type of page this is, i.e: home, product, category, search,
+        // basket, checkout, confirmation
 		category: "product",
 
-        // subCategory: String A more detailed description of the page, eg: if Category is "category", subCategory may be "Mens Shirts"
+        // subCategory: String A more detailed description of the page, eg: if Category is
+        // "category", subCategory may be "Mens Shirts"
 		subCategory: "Mens Shirts"
 	},
 
@@ -67,20 +69,20 @@ window.qubitUniversalVariables = {
 		// which differ by colour or size. This is for the case where only one SKU are selectable
 		sku: "12345678",
 
-        // Array: [String, String, ...] - An SKU code for each item that is being viewed - these should 
-		// be unique for items which differ by colour or size. This is for the case where multiple SKUs 
+        // Array: [String, String, ...] - An SKU code for each item that is being viewed - these should
+		// be unique for items which differ by colour or size. This is for the case where multiple SKUs
 		// are selectable
 		skus: ["1111111", "222222", "33333"],
 
         // Array: [String, String, ...] - An array of the sizes which are presented for the product being
-		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B", 
+		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B",
 		// "C", "D", "DD"]
 		sizes: ["8","9","10"],
 
 		// unitPrice: Number - The cost of a single unit of the item that is being viewed
 		unitPrice: 14.99,
 
-		// unitSalePrice: Number: The price of the item taking into account any sales or special 
+		// unitSalePrice: Number: The price of the item taking into account any sales or special
 		// circumstances
 		unitSalePrice: 10.99,
 
@@ -98,7 +100,7 @@ window.qubitUniversalVariables = {
 		// item, but not including shipping or discounts
 		subtotal: 12.00,
 
-        // total: Number - A valid number with the total cost of the basket including any known tax, 
+        // total: Number - A valid number with the total cost of the basket including any known tax,
 		// shipping and discounts
 		total: 123.00,
 
@@ -223,7 +225,7 @@ window.qubitUniversalVariables = {
 
     			// productCategory: String - The category of the product that has been sold.
                 productCategory: "Clothing",
-				
+
 				// productSubCategory: String - The sub-category of the product that is in the basket
     			productSubCategory: "Men's Clothing",
 
@@ -234,11 +236,11 @@ window.qubitUniversalVariables = {
     			// quantity: Number - The number of units being sold.
                 quantity: 1,
 
-    			// salePrice: Number - The price of the item taking into account any sales due to 
+    			// salePrice: Number - The price of the item taking into account any sales due to
 				// vouchers, or special circumstances.
                 salePrice: 12.30
 
-                // voucher: Number - The voucher code entered (only necessary if different from 
+                // voucher: Number - The voucher code entered (only necessary if different from
 				// transaction)
     			voucher: "MYVOUCHER"
 			},
