@@ -42,7 +42,10 @@ window.qubitUniversalVariables = {
 		username: "username",
 
         // email: String - The email address of the logged in user
-		email: "user@example.com"
+		email: "user@example.com",
+
+        // returning: Boolean - true if the user is a returning user, otherwise false
+        returning: true
 	},
 
     /*****************************************************************************
