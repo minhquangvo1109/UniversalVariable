@@ -20,14 +20,14 @@ Below for each object and variable you will see a data type: String or Number; a
 window.qubitUniversalVariables = {
 	/*********************************************************************
 	 * Variables that may live on any page which describe the page itself
-     *********************************************************************/
+	 *********************************************************************/
 	page: {
-        // category: String - The type of page this is, i.e: home, product, category, search,
-        // basket, checkout, confirmation
+		// category: String - The type of page this is, i.e: home, product, category, search,
+		// basket, checkout, confirmation
 		category: "product",
 
-        // subCategory: String A more detailed description of the page, eg: if Category is
-        // "category", subCategory may be "Mens Shirts"
+		// subCategory: String A more detailed description of the page, eg: if Category is
+		// "category", subCategory may be "Mens Shirts"
 		subCategory: "Mens Shirts"
 	},
 
@@ -35,22 +35,22 @@ window.qubitUniversalVariables = {
 	 * Variables that may live on any page which describe the current user
 	 *********************************************************************/
 	user: {
-        // name: String - The name of the user
+		// name: String - The name of the user
 		name: "Name",
 
-        // username: String - The user  name of the logged in user
+		// username: String - The user  name of the logged in user
 		username: "username",
 
-        // email: String - The email address of the logged in user
+		// email: String - The email address of the logged in user
 		email: "user@example.com",
 
-        // returning: Boolean - true if the user is a returning user, otherwise false
-        returning: true
+		// returning: Boolean - true if the user is a returning user, otherwise false
+		returning: true
 	},
 
-    /*****************************************************************************
+	/*****************************************************************************
 	 * Variables which describe a single product that is being viewed in the page
-     *****************************************************************************/
+	 *****************************************************************************/
 
 	product: {
 		// id: String - The identifier for the item that is being viewed - this is product Id, not SKU id
@@ -68,16 +68,16 @@ window.qubitUniversalVariables = {
 		// subCategory: String - The sub-category of the product that is being viewed
 		subCategory: "Trainers",
 
-        // sku: String - The SKU code for the item that is being viewed - this should be unique for items
+		// sku: String - The SKU code for the item that is being viewed - this should be unique for items
 		// which differ by colour or size. This is for the case where only one SKU are selectable
 		sku: "12345678",
 
-        // Array: [String, String, ...] - An SKU code for each item that is being viewed - these should
+		// Array: [String, String, ...] - An SKU code for each item that is being viewed - these should
 		// be unique for items which differ by colour or size. This is for the case where multiple SKUs
 		// are selectable
 		skus: ["1111111", "222222", "33333"],
 
-        // Array: [String, String, ...] - An array of the sizes which are presented for the product being
+		// Array: [String, String, ...] - An array of the sizes which are presented for the product being
 		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B",
 		// "C", "D", "DD"]
 		sizes: ["8","9","10"],
@@ -99,71 +99,71 @@ window.qubitUniversalVariables = {
 	 **************************************************************************/
 	basket: {
 
-        // subtotal: Number - A valid number with the total cost of the basket including any known tax per
+		// subtotal: Number - A valid number with the total cost of the basket including any known tax per
 		// item, but not including shipping or discounts
 		subtotal: 12.00,
 
-        // total: Number - A valid number with the total cost of the basket including any known tax,
+		// total: Number - A valid number with the total cost of the basket including any known tax,
 		// shipping and discounts
 		total: 123.00,
 
-        // tax: Number - A valid number with the total amount of potential tax included in the order
+		// tax: Number - A valid number with the total amount of potential tax included in the order
 		tax: 12.00,
 
-        // shipping: Number - A valid number with the total amount of potential shipping costs included in
+		// shipping: Number - A valid number with the total amount of potential shipping costs included in
 		// the order
 		shipping: 1.00,
 
-        // currency: String - The standard letter code in capitals for the currency type in which the
+		// currency: String - The standard letter code in capitals for the currency type in which the
 		// order is being paid, eg: EUR, USD, GBP
 		currency: "GBP",
 
-        // items: Array - An array of item objects
+		// items: Array - An array of item objects
 		items: [
-            {
-                // productId: String - The identifier for the item in the basket - this must be the same
+			{
+				// productId: String - The identifier for the item in the basket - this must be the same
 				// for items which differ only by colour or size
-    			productId: "ABC123",
+				productId: "ABC123",
 
-                // productSku: String - The SKU code for the item in the basket - this should be unique
+				// productSku: String - The SKU code for the item in the basket - this should be unique
 				// for items which differ by colour or size
-    			productSku: "DEF456",
+				productSku: "DEF456",
 
-                // productName: String - The name of the product that is in the basket
-    			productName: "White T-Shirt",
+				// productName: String - The name of the product that is in the basket
+				productName: "White T-Shirt",
 
-                // productManufacturer: String - The manufacturer of the product that is in the basket
-    			productManufacturer: "Manufacturer Name",
+				// productManufacturer: String - The manufacturer of the product that is in the basket
+				productManufacturer: "Manufacturer Name",
 
-                // productCategory: String - The category of the product that is in the basket
-    			productCategory: "Clothing",
+				// productCategory: String - The category of the product that is in the basket
+				productCategory: "Clothing",
 
-                // productSubCategory: String - The sub-category of the product that is in the basket
-    			productSubCategory: "Men's Clothing",
+				// productSubCategory: String - The sub-category of the product that is in the basket
+				productSubCategory: "Men's Clothing",
 
-                // productUnitPrice: Number - A number with the cost of a single unit of the item in the
+				// productUnitPrice: Number - A number with the cost of a single unit of the item in the
 				// basket
-    			productUnitPrice: 12.30,
+				productUnitPrice: 12.30,
 
-                // quantity: Number - The number of units of this item in the basket
-    			quantity: 1,
+				// quantity: Number - The number of units of this item in the basket
+				quantity: 1,
 
-                // salePrice: Number - The price of the item taking into account any sales due to vouchers
+				// salePrice: Number - The price of the item taking into account any sales due to vouchers
 				// or special circumstances
-    			salePrice: 10.30
+				salePrice: 10.30
 			},
 
-            // In case you have multiple, keep adding more of the same object type to the array
+			// In case you have multiple, keep adding more of the same object type to the array
 			{
-    			productId: "ABC234",
-                productSku: "DEF456",
-                productName: "Blue T-Shirt",
-                productManufacturer: "Manufacturer Name",
-                productCategory: "Clothing",
-                productSubCategory: "Men's Clothing",
-                productUnitPrice: 13.30,
-                quantity: 1,
-                salePrice: 12.30
+				productId: "ABC234",
+				productSku: "DEF456",
+				productName: "Blue T-Shirt",
+				productManufacturer: "Manufacturer Name",
+				productCategory: "Clothing",
+				productSubCategory: "Men's Clothing",
+				productUnitPrice: 13.30,
+				quantity: 1,
+				salePrice: 12.30
 			}
 	   ]
 	},
@@ -173,90 +173,90 @@ window.qubitUniversalVariables = {
 	 * Variables which describe a completed purchase
 	 ***********************************************/
 	transaction: {
-        // orderId: String - A unique identifier for the order
+		// orderId: String - A unique identifier for the order
 		orderId: "WEB123456",
 
-        // orderSubtotal: Number - A valid number with the total amount the order including tax per item,
+		// orderSubtotal: Number - A valid number with the total amount the order including tax per item,
 		// but not including shipping or discounts
 		orderSubtotal: 123.00,
 
-        // orderTotal: Number - A valid number with the total cost including tax, shipping and discounts
+		// orderTotal: Number - A valid number with the total cost including tax, shipping and discounts
 		orderTotal: 130.00,
 
-        // orderTax: Number - A valid number with the total amount of tax included in the order
+		// orderTax: Number - A valid number with the total amount of tax included in the order
 		orderTax: 10.00,
 
-        // orderShipping: Number - A valid number with the total amount of shipping costs included in the
+		// orderShipping: Number - A valid number with the total amount of shipping costs included in the
 		// order
 		orderShipping: 0.00,
 
-        // orderCurrency: String - The standard letter code in captials for the currency type in which
+		// orderCurrency: String - The standard letter code in captials for the currency type in which
 		// the order is being paid, eg EUR, USD, GBP
 		orderCurrency: "GBP",
 
-        // city: String - The city to which the order is to be dispatched
+		// city: String - The city to which the order is to be dispatched
 		city: "London",
 
-        // state: String - The state to which the order is to be dispatched
+		// state: String - The state to which the order is to be dispatched
 		state: "London",
 
-        // country: String - The country to which the order is to be dispatched
+		// country: String - The country to which the order is to be dispatched
 		country: "UK",
 
-        // voucher: String - The voucher code entered
+		// voucher: String - The voucher code entered
 		voucher: "MYVOUCHER",
 
-        // voucherDiscount: Number - A valid number with the total amount of discount due to the voucher
+		// voucherDiscount: Number - A valid number with the total amount of discount due to the voucher
 		// entered
 		voucherDiscount: 0.00
 
 		items: [
 			{
-                // productId: String - The identifier for the item that has been sold - this must be the
+				// productId: String - The identifier for the item that has been sold - this must be the
 				// same for items which differ only by colour or size.
-    			productId: "ABC234"
+				productId: "ABC234"
 
-    			// productSku: String - The SKU code for the item that has been sold. This should be
+				// productSku: String - The SKU code for the item that has been sold. This should be
 				// unique for items which differ by colour or size.
-                productSku: "DEF456",
+				productSku: "DEF456",
 
-    			// productName: String - The name of the product that has been sold.
-                productName: "Blue T-Shirt",
+				// productName: String - The name of the product that has been sold.
+				productName: "Blue T-Shirt",
 
-    			// productManufacturer: String - The manufacturer of the product that has been sold.
-                productManufacturer: "Manufacturer Name",
+				// productManufacturer: String - The manufacturer of the product that has been sold.
+				productManufacturer: "Manufacturer Name",
 
-    			// productCategory: String - The category of the product that has been sold.
-                productCategory: "Clothing",
+				// productCategory: String - The category of the product that has been sold.
+				productCategory: "Clothing",
 
 				// productSubCategory: String - The sub-category of the product that is in the basket
-    			productSubCategory: "Men's Clothing",
+				productSubCategory: "Men's Clothing",
 
-    			// productUnitPrice: Number - A number with the cost of a single unit of the item being
+				// productUnitPrice: Number - A number with the cost of a single unit of the item being
 				// sold.
-                productUnitPrice: 13.30,
+				productUnitPrice: 13.30,
 
-    			// quantity: Number - The number of units being sold.
-                quantity: 1,
+				// quantity: Number - The number of units being sold.
+				quantity: 1,
 
-    			// salePrice: Number - The price of the item taking into account any sales due to
+				// salePrice: Number - The price of the item taking into account any sales due to
 				// vouchers, or special circumstances.
-                salePrice: 12.30
+				salePrice: 12.30
 
-                // voucher: Number - The voucher code entered (only necessary if different from
+				// voucher: Number - The voucher code entered (only necessary if different from
 				// transaction)
-    			voucher: "MYVOUCHER"
+				voucher: "MYVOUCHER"
 			},
 			{
-    			productId: "ABC456"
-    			productSku: "DEF678",
-    			productName: "White T-Shirt",
-    			productManufacturer: "Manufacturer Name",
-    			productCategory: "Clothing",
-    			productUnitPrice: 12.30,
-    			quantity: 1,
-    			saleAmount: 10.30,
-    			voucher: "MYVOUCHER"
+				productId: "ABC456"
+				productSku: "DEF678",
+				productName: "White T-Shirt",
+				productManufacturer: "Manufacturer Name",
+				productCategory: "Clothing",
+				productUnitPrice: 12.30,
+				quantity: 1,
+				saleAmount: 10.30,
+				voucher: "MYVOUCHER"
 			}
 		]
 	}
