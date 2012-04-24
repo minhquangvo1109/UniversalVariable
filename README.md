@@ -4,26 +4,26 @@ Qubit Universal variables are to be written to a page in the following form. Var
 ```html
 <script>
 window.qubitUniversalVariables = {
-	/****
-	* Variables that may live on any page which describe the page itself
-	****/
+	/*********************************************************************
+	 * Variables that may live on any page which describe the page itself
+     *********************************************************************/
 	page: {
 		category: "<The type of page this is, eg: home, product, category, search, basket, checkout, confirmation>",
 		subCategory: "<A more detailed description of the page, eg: if Category is \"category\", subCategory may be \"Mens Shirts\">"
 	},
 
-	/****
-	* Variables that may live on any page which describe the current user
-	****/
+	/*********************************************************************
+	 * Variables that may live on any page which describe the current user
+	 *********************************************************************/
 	user: {
 		name: "The name of the user",
 		username: "<The user  name of the logged in user>",
 		email: "<The email address of the logged in user>"
 	},
 
-	/****
-	* Variables which describe a single product that is being viewed in the page
-	****/
+    /*****************************************************************************
+	 * Variables which describe a single product that is being viewed in the page
+     *****************************************************************************/
 
 	product: {
 		// id: String - The identifier for the item that is being viewed - this is product Id, not SKU id.
@@ -64,40 +64,72 @@ window.qubitUniversalVariables = {
 	* Variables which describe the current state of the user�s shopping basket
 	****/
 	basket: {
-		subtotal: <A valid number with the total cost of the basket including any known tax per item, but not including shipping or discounts>,
-		total: <a valid number with the total cost of the basket including any known tax, shipping and discounts>,
-		tax: <a valid number with the total amount of potential tax included in the order>,
-		shipping: <a valid number with the total amount of potential shipping costs included in the order>,
-		currency: "<The standard letter code in capitals for the currency type in which the order is being paid, eg: EUR, USD, GBP>",
+
+        // subtotal: Number - A valid number with the total cost of the basket including any known tax per item, but not including shipping or discounts
+		subtotal: 12.00,
+
+        // total: Number - A valid number with the total cost of the basket including any known tax, shipping and discounts
+		total: 123.00,
+
+        // tax: Number - A valid number with the total amount of potential tax included in the order
+		tax: 12.00,
+
+        // shipping: Number - A valid number with the total amount of potential shipping costs included in the order
+		shipping: 1.00,
+
+        // currency: String - The standard letter code in capitals for the currency type in which the order is being paid, eg: EUR, USD, GBP
+		currency: "GBP",
+
+        // items: Array - An array of item objects
 		items: [
-			{
-			productId: "<The identifier for the item in the basket - this must be the same for items which differ only by colour or size>"
-			productSku: "<The SKU code for the item in the basket - this should be unique for items which differ by colour or size>",
-			productName: "<The name of the product that is in the basket>",
-			productManufacturer: "<The manufacturer of the product that is in the basket>",
-			productCategory: "<The category of the product that is in the basket>",
-			productSubCategory: "<The sub-category of the product that is in the basket>",
-			productUnitPrice: <A number with the cost of a single unit of the item in the basket>,
-			quantity: <The number of units of this item in the basket>,
-			salePrice: <The price of the item taking into account any sales due to vouchers, or special circumstances>
+            {
+                // productId: String - The identifier for the item in the basket - this must be the same for items which differ only by colour or size
+    			productId: "ABC123",
+
+                // productSku: String - The SKU code for the item in the basket - this should be unique for items which differ by colour or size
+    			productSku: "DEF456",
+
+                // productName: String - The name of the product that is in the basket
+    			productName: "White T-Shirt",
+
+                // productManufacturer: String - The manufacturer of the product that is in the basket
+    			productManufacturer: "Manufacturer Name",
+
+                // productCategory: String - The category of the product that is in the basket
+    			productCategory: "Clothing",
+
+                // productSubCategory: String - The sub-category of the product that is in the basket
+    			productSubCategory: "Men's Clothing",
+
+                // productUnitPrice: Number - A number with the cost of a single unit of the item in the basket
+    			productUnitPrice: 12.30,
+
+                // quantity: Number - The number of units of this item in the basket
+    			quantity: 1,
+
+                // salePrice: Number - The price of the item taking into account any sales due to vouchers, or special circumstances
+    			salePrice: 10.30
 			},
-			{ // In case you have multiple, keep adding more of the same object type to the array
-			productId: "<The identifier for the item in the basket - this must be the same for items which differ only by colour or size>"
-			productSku: "<The SKU code for the item in the basket - this should be unique for items which differ by colour or size>",
-			productName: "<The name of the product that is in the basket>",
-			productManufacturer: "<The manufacturer of the product that is in the basket>",
-			productCategory: "<The category of the product that is in the basket>",
-			productSubCategory: "<The sub-category of the product that is in the basket>",
-			productUnitPrice: <A number with the cost of a single unit of the item in the basket>,
-			quantity: <The number of units of this item in the basket>,
-			salePrice: <The price of the item taking into account any sales due to vouchers, or special circumstances>
+
+            // In case you have multiple, keep adding more of the same object type to the array
+			{
+    			productId: "ABC234",
+                productSku: "DEF456",
+                productName: "Blue T-Shirt",
+                productManufacturer: "Manufacturer Name",
+                productCategory: "Clothing",
+                productSubCategory: "Men's Clothing",
+                productUnitPrice: 13.30,
+                quantity: 1,
+                salePrice: 12.30
 			}
-	 ]
+	   ]
 	},
 
-	/***
-	* Variables which describe a completed purchase
-	***/
+
+	/***********************************************
+	 * Variables which describe a completed purchase
+	 ***********************************************/
 	transaction: {
 		orderId: "<a unique identifier for the order>",
 		orderSubtotal: <a valid number with the total amount the order including tax per item, but not including shipping or discounts>,
