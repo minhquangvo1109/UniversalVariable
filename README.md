@@ -1,7 +1,7 @@
 DRAFT
 Qubit Universal variables are to be written to a page in the following form. Variables inside <> are to be replaced with the value described within the tokens. The resultant generated code must be valid JavaScript.
 
-
+```html
 	<script>
 
 		window.qubitUniversalVariables = {
@@ -10,7 +10,7 @@ Qubit Universal variables are to be written to a page in the following form. Var
 			****/
 			page: {
 				category: "<The type of page this is, eg: home, product, category, search, basket, checkout, confirmation>",
-				subCategory: "<A more detailed description of the page, eg: if Category is ‘category’, subCategory may be ‘Men’s Shirts’>"
+				subCategory: "<A more detailed description of the page, eg: if Category is ï¿½categoryï¿½, subCategory may be ï¿½Menï¿½s Shirtsï¿½>"
 			},
 		 
 			/**** 
@@ -58,7 +58,7 @@ Qubit Universal variables are to be written to a page in the following form. Var
 			},
 
 			/**** 
-			* Variables which describe the current state of the user’s shopping basket
+			* Variables which describe the current state of the userï¿½s shopping basket
 			****/
 			basket: {
 				subtotal: <A valid number with the total cost of the basket including any known tax per item, but not including shipping or discounts>,
@@ -134,3 +134,4 @@ Qubit Universal variables are to be written to a page in the following form. Var
 			}
 		}
 	</script>
+```
