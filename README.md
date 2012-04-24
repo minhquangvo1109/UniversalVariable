@@ -1,5 +1,19 @@
 DRAFT
-Qubit Universal variables are to be written to a page in the following form. Variables inside <> are to be replaced with the value described within the tokens. The resultant generated code must be valid JavaScript.
+Qubit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers. 
+
+Below you will see 4 different main objects:
+
+* Page
+* User
+* Product
+* Basket
+* Transaction
+
+QuBit OpenTag recommends creating the releavant JavaScript object on your page prior to the OpenTag container script. This will assure the values are present on the page when a script tries to access them.
+
+If a page does not have the variables that are mentioned below, simply do not even declare them. For example, if your pages only have category and no subcategory, just declare your category. Likewise, if you feel the need to extend the variables below or feel like renaming them, please do so; However, please keep in mind the new variable names or the edited ones, because in order to access them from your scripts in your container, you will need to indicate the new variable names.
+
+Below for each object and variable you will see a data type: String or Number; along with examples and comments about what they represent. Please review them carefully.  When you implement them, please make sure that the resultant generated code is be valid JavaScript.
 
 ```html
 <script>
