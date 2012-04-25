@@ -2,7 +2,7 @@
 
 QuBit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
-Below you will see 4 different main objects:
+Below you will see 5 different main objects:
 * Page: Details of the page type and category
 * User: Details of the logged in user, or the visitor
 * Product: Details of the product the user is currently viewing
