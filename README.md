@@ -1,6 +1,6 @@
 # QuBit Universal Variables Specification Version 0.9 (DRAFT)
 
-Qubit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
+QuBit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
 Below you will see 4 different main objects:
 * Page: Details of the page type and category
@@ -45,7 +45,10 @@ window.qubitUniversalVariables = {
 		email: "user@example.com",
 
 		// returning: Boolean - true if the user is a returning user, otherwise false
-		returning: true
+		returning: true,
+		
+		// facebookId: Number: Facebook id of the logged in user
+		facebookId: 12345678901232345
 	},
 
 	/*****************************************************************************
@@ -80,7 +83,7 @@ window.qubitUniversalVariables = {
 		// Array: [String, String, ...] - An array of the sizes which are presented for the product being
 		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B",
 		// "C", "D", "DD"]
-		sizes: ["8","9","10"],
+		sizes: ["8", "9", "10"],
 
 		// unitPrice: Number - The cost of a single unit of the item that is being viewed
 		unitPrice: 14.99,
@@ -165,7 +168,7 @@ window.qubitUniversalVariables = {
 				quantity: 1,
 				salePrice: 12.30
 			}
-	   ]
+	    ]
 	},
 
 
@@ -200,6 +203,9 @@ window.qubitUniversalVariables = {
 		// state: String - The state to which the order is to be dispatched
 		state: "London",
 
+		// postCode: String - The post code to which the order is to be dispatched
+		postCode: "SW1 1AB",
+		
 		// country: String - The country to which the order is to be dispatched
 		country: "UK",
 
@@ -208,13 +214,13 @@ window.qubitUniversalVariables = {
 
 		// voucherDiscount: Number - A valid number with the total amount of discount due to the voucher
 		// entered
-		voucherDiscount: 0.00
+		voucherDiscount: 0.00,
 
 		items: [
 			{
 				// productId: String - The identifier for the item that has been sold - this must be the
 				// same for items which differ only by colour or size.
-				productId: "ABC234"
+				productId: "ABC234",
 
 				// productSku: String - The SKU code for the item that has been sold. This should be
 				// unique for items which differ by colour or size.
@@ -241,14 +247,14 @@ window.qubitUniversalVariables = {
 
 				// salePrice: Number - The price of the item taking into account any sales due to
 				// vouchers, or special circumstances.
-				salePrice: 12.30
+				salePrice: 12.30,
 
 				// voucher: Number - The voucher code entered (only necessary if different from
 				// transaction)
 				voucher: "MYVOUCHER"
 			},
 			{
-				productId: "ABC456"
+				productId: "ABC456",
 				productSku: "DEF678",
 				productName: "White T-Shirt",
 				productManufacturer: "Manufacturer Name",
