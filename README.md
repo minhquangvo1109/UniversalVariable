@@ -15,12 +15,24 @@ If a page does not have the variables that are mentioned below, simply do not ev
 
 Below for each object and variable you will see a data type: String or Number; along with examples and comments about what they represent. Please review them carefully.  When you implement them, please make sure that the resultant generated code is be valid JavaScript.
 
-```html
-<script>
-window.qubitUniversalVariables = {
-	/*********************************************************************
-	 * Variables that may live on any page which describe the page itself
-	 *********************************************************************/
+## Namespace
+
+All universal variable should be assigned to `window` object under `qubit_universal_vars` object.
+
+example:
+
+``` javascript
+window.qubit_universal_vars = {};
+```
+
+## Page
+
+The Page Universal Variable describes a page type with category or sub-category. It may be created on any page. 
+
+Specification:
+
+``` javascript
+window.qubit_universal_vars = {
 	page: {
 		// category: String - The type of page this is, i.e: home, product, category, search,
 		// basket, checkout, confirmation
@@ -28,12 +40,19 @@ window.qubitUniversalVariables = {
 
 		// subCategory: String A more detailed description of the page, eg: if Category is
 		// "category", subCategory may be "Mens Shirts"
-		subCategory: "Mens Shirts"
-	},
+		sub_category: "Mens Shirts"
+	}
+}
+```
 
-	/*********************************************************************
-	 * Variables that may live on any page which describe the current user
-	 *********************************************************************/
+## User
+
+The User Universal Variable describes a user. It may be created on any page.
+
+Specification:
+
+``` javascript
+window.qubit_universal_vars = {
 	user: {
 		// name: String - The name of the user
 		name: "Name",
@@ -47,17 +66,37 @@ window.qubitUniversalVariables = {
 		// returning: Boolean - true if the user is a returning user, otherwise false
 		returning: true,
 		
-		// facebookId: Number: Facebook id of the logged in user
-		facebookId: 12345678901232345
-	},
+		// facebook_id: Number - Facebook id of the logged in user
+		facebook_id: 12345678901232345,
 
-	/*****************************************************************************
-	 * Variables which describe a single product that is being viewed in the page
-	 *****************************************************************************/
+		// twtter_id: String - Twitter id
+		twitter_id: "myid"
+	}
+}
+```
 
+## Product
+
+The Product universal variable describes a single product information. `Product` is usually displayed in a number of pages, or even sections with in a page. The Product Universal Variable provides a single specification to desribe a product information. 
+
+When the variable is used with `product` key, it represents a single product page. It can also composite with other universal variables:
+* `transaction` variable may have an array of products as purchasd products
+* `basket` variable may have an array of products as items in the basket
+* `search` variable may have an array of products as search results
+* `recommendation` variable may have an array of products as recommended items for purchase
+* `product` variable itself may also have an array of products as sub products
+
+Specification:
+
+``` javascript
+window.qubit_universal_vars = {
 	product: {
-		// id: String - The identifier for the item that is being viewed - this is product Id, not SKU id
+		// id: String - The identifier for the item that is being viewed. This is product ID, NOT SKU id
 		id: "ABC123",
+
+		// sku: String - The SKU code for the item that is being viewed - this should be unique for items
+		// which differ by colour or size. This is for the case where only one SKU are selectable
+		sku: "12345678",
 
 		// name: String - The name of the product that is being viewed
 		name: "XYZShoes",
@@ -68,12 +107,8 @@ window.qubitUniversalVariables = {
 		// category: String - The category of the product that is being viewed
 		category: "Shoe",
 
-		// subCategory: String - The sub-category of the product that is being viewed
-		subCategory: "Trainers",
-
-		// sku: String - The SKU code for the item that is being viewed - this should be unique for items
-		// which differ by colour or size. This is for the case where only one SKU are selectable
-		sku: "12345678",
+		// sub_category: String - The sub-category of the product that is being viewed
+		sub_category: "Trainers",
 
 		// Array: [String, String, ...] - An SKU code for each item that is being viewed - these should
 		// be unique for items which differ by colour or size. This is for the case where multiple SKUs
@@ -85,21 +120,42 @@ window.qubitUniversalVariables = {
 		// "C", "D", "DD"]
 		sizes: ["8", "9", "10"],
 
-		// unitPrice: Number - The cost of a single unit of the item that is being viewed
-		unitPrice: 14.99,
+		// color: String - a text describes colour of the item
+		colour: "blue",
 
-		// unitSalePrice: Number: The price of the item taking into account any sales or special
+		// in_stock: Boolean - true if the item is in stock
+		in_stock: true,
+
+		// unit_price: Number - The cost of a single unit of the item that is being viewed
+		unit_price: 14.99,
+
+		// unit_sale_price: Number - The price of the item taking into account any sales or special
 		// circumstances
-		unitSalePrice: 10.99,
+		unit_sale_price: 10.99,
 
-		// unitPriceCurrency: String: The currency in which the unit price is displayed. Three letter ISO
+		// unit_price_currency: String - The currency in which the unit price is displayed. Three letter ISO
 		// code: GBP, EUR, USD etc.
-		unitPriceCurrency: "GBP"
-	},
+		unit_price_currency: "GBP",
 
-	/**************************************************************************
-	 * Variables which describe the current state of the user's shopping basket
-	 **************************************************************************/
+		// quantity: Number - The number of units of this item in the basket
+		quantity: 1,
+
+		// voucher: Number - The voucher code entered (only necessary if different from
+		// transaction)
+		voucher: "MYVOUCHER"
+	}
+}
+```
+
+## Basket
+
+The Basket Universal Variable describes the current state of the a user's shopping basket.
+
+Specification:
+
+``` javascript
+window.qubit_universal_vars = {
+
 	basket: {
 
 		// subtotal: Number - A valid number with the total cost of the basket including any known tax per
@@ -121,60 +177,17 @@ window.qubitUniversalVariables = {
 		// order is being paid, eg: EUR, USD, GBP
 		currency: "GBP",
 
-		// items: Array - An array of item objects
-		items: [
-			{
-				// productId: String - The identifier for the item in the basket - this must be the same
-				// for items which differ only by colour or size
-				productId: "ABC123",
-
-				// productSku: String - The SKU code for the item in the basket - this should be unique
-				// for items which differ by colour or size
-				productSku: "DEF456",
-
-				// productName: String - The name of the product that is in the basket
-				productName: "White T-Shirt",
-
-				// productManufacturer: String - The manufacturer of the product that is in the basket
-				productManufacturer: "Manufacturer Name",
-
-				// productCategory: String - The category of the product that is in the basket
-				productCategory: "Clothing",
-
-				// productSubCategory: String - The sub-category of the product that is in the basket
-				productSubCategory: "Men's Clothing",
-
-				// productUnitPrice: Number - A number with the cost of a single unit of the item in the
-				// basket
-				productUnitPrice: 12.30,
-
-				// quantity: Number - The number of units of this item in the basket
-				quantity: 1,
-
-				// salePrice: Number - The price of the item taking into account any sales due to vouchers
-				// or special circumstances
-				salePrice: 10.30
-			},
-
-			// In case you have multiple, keep adding more of the same object type to the array
-			{
-				productId: "ABC234",
-				productSku: "DEF456",
-				productName: "Blue T-Shirt",
-				productManufacturer: "Manufacturer Name",
-				productCategory: "Clothing",
-				productSubCategory: "Men's Clothing",
-				productUnitPrice: 13.30,
-				quantity: 1,
-				salePrice: 12.30
-			}
-	    ]
-	},
+		// items: Array - An array of Product Universal Variable
+		items: [Product, Product, Product,...]
+	}
+}
+```
 
 
-	/***********************************************
-	 * Variables which describe a completed purchase
-	 ***********************************************/
+## Transaction
+Transaction Universal Variable describes a completed purchase.
+
+```javascript
 	transaction: {
 		// orderId: String - A unique identifier for the order
 		orderId: "WEB123456",
@@ -212,60 +225,13 @@ window.qubitUniversalVariables = {
 		// voucher: String - The voucher code entered
 		voucher: "MYVOUCHER",
 
-		// voucherDiscount: Number - A valid number with the total amount of discount due to the voucher
+		// voucher_discount: Number - A valid number with the total amount of discount due to the voucher
 		// entered
-		voucherDiscount: 0.00,
+		voucher_discount: 0.00,
 
-		items: [
-			{
-				// productId: String - The identifier for the item that has been sold - this must be the
-				// same for items which differ only by colour or size.
-				productId: "ABC234",
-
-				// productSku: String - The SKU code for the item that has been sold. This should be
-				// unique for items which differ by colour or size.
-				productSku: "DEF456",
-
-				// productName: String - The name of the product that has been sold.
-				productName: "Blue T-Shirt",
-
-				// productManufacturer: String - The manufacturer of the product that has been sold.
-				productManufacturer: "Manufacturer Name",
-
-				// productCategory: String - The category of the product that has been sold.
-				productCategory: "Clothing",
-
-				// productSubCategory: String - The sub-category of the product that is in the basket
-				productSubCategory: "Men's Clothing",
-
-				// productUnitPrice: Number - A number with the cost of a single unit of the item being
-				// sold.
-				productUnitPrice: 13.30,
-
-				// quantity: Number - The number of units being sold.
-				quantity: 1,
-
-				// salePrice: Number - The price of the item taking into account any sales due to
-				// vouchers, or special circumstances.
-				salePrice: 12.30,
-
-				// voucher: Number - The voucher code entered (only necessary if different from
-				// transaction)
-				voucher: "MYVOUCHER"
-			},
-			{
-				productId: "ABC456",
-				productSku: "DEF678",
-				productName: "White T-Shirt",
-				productManufacturer: "Manufacturer Name",
-				productCategory: "Clothing",
-				productUnitPrice: 12.30,
-				quantity: 1,
-				saleAmount: 10.30,
-				voucher: "MYVOUCHER"
-			}
-		]
+		// items: Array - An array of Product Universal Variable 
+		items: [Product, Product, Product, ...]
 	}
-}
-</script>
 ```
+
+
