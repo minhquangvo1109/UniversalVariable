@@ -91,57 +91,71 @@ Specification:
 ``` javascript
 window.qubit_universal_vars = {
 	product: {
-		// id: String - The identifier for the item that is being viewed. This is product ID, NOT SKU id
+		// {String}
+		// The identifier for the item that is being viewed. This is product ID, NOT SKU id
 		id: "ABC123",
 
-		// sku: String - The SKU code for the item that is being viewed - this should be unique for items
+		// {String}
+		// The SKU code for the item that is being viewed - this should be unique for items
 		// which differ by colour or size. This is for the case where only one SKU are selectable
 		sku: "12345678",
 
-		// name: String - The name of the product that is being viewed
+		// {String}
+		// The name of the product that is being viewed
 		name: "XYZShoes",
 
-		// manufacturer: String - The manufactuter of the product that is being viewed
+		// {String}
+		// The manufactuter of the product that is being viewed
 		manufacturer: "Acme Corp",
 
-		// category: String - The category of the product that is being viewed
+		// {String}
+		// The category of the product that is being viewed
 		category: "Shoe",
 
-		// sub_category: String - The sub-category of the product that is being viewed
+		// {String}
+		// The sub-category of the product that is being viewed
 		sub_category: "Trainers",
 
-		// Array: [String, String, ...] - An SKU code for each item that is being viewed - these should
-		// be unique for items which differ by colour or size. This is for the case where multiple SKUs
+		// {Array} of {String}
+		// An SKU code for each item that is being viewed - these should be unique for items
+		// which differ by colour or size. This is for the case where multiple SKUs
 		// are selectable
 		skus: ["1111111", "222222", "33333"],
 
-		// Array: [String, String, ...] - An array of the sizes which are presented for the product being
+		// {Array}  of {String}
+		// An array of the sizes which are presented for the product being
 		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B",
 		// "C", "D", "DD"]
 		sizes: ["8", "9", "10"],
 
-		// color: String - a text describes colour of the item
+		// {String}
+		// A text describes colour of the item
 		colour: "blue",
 
-		// in_stock: Boolean - true if the item is in stock
+		// {Boolean} 
+		// true if the item is in stock
 		in_stock: true,
 
-		// unit_price: Number - The cost of a single unit of the item that is being viewed
+		// {Number}
+		// The cost of a single unit of the item that is being viewed
 		unit_price: 14.99,
 
-		// unit_sale_price: Number - The price of the item taking into account any sales or special
+		// {Number}
+		// The price of the item taking into account any sales or special
 		// circumstances
 		unit_sale_price: 10.99,
 
-		// unit_price_currency: String - The currency in which the unit price is displayed. Three letter ISO
+		// {String}
+		// The currency in which the unit price is displayed. Three letter ISO
 		// code: GBP, EUR, USD etc.
 		unit_price_currency: "GBP",
 
-		// quantity: Number - The number of units of this item in the basket
+		// {Number}
+		// The number of units of this item in the basket
 		quantity: 1,
 
-		// voucher: Number - The voucher code entered (only necessary if different from
-		// transaction)
+		// {Number}
+		// The voucher code entered (only necessary if different from transaction)
 		voucher: "MYVOUCHER"
 	}
 }
@@ -149,32 +163,38 @@ window.qubit_universal_vars = {
 
 ## Basket
 
-The Basket Universal Variable describes the current state of the a user's shopping basket.
+The Basket Universal Variable describes the current state of the a user's shopping basket. It also requires a list of [Product Universal Variable](#product) in the `item` array.
 
 Specification:
 ``` javascript
 window.qubit_universal_vars = {
 	basket: {
-		// currency: String - The standard letter code in capitals for the currency type in which the
+		// {String}
+		// The standard letter code in capitals for the currency type in which the
 		// order is being paid, eg: EUR, USD, GBP
 		currency: "GBP",
 
-		// subtotal: Number - A valid number with the total cost of the basket including any known tax per
+		// {Number}
+		// A valid number with the total cost of the basket including any known tax per
 		// item, but not including shipping or discounts
 		subtotal: 12.00,
 
-		// tax: Number - A valid number with the total amount of potential tax included in the order
+		// {Number}
+		// A valid number with the total amount of potential tax included in the order
 		tax: 12.00,
 
-		// shipping_cost: Number - A valid number with the total amount of potential shipping costs included in
+		// {Number}
+		// A valid number with the total amount of potential shipping costs included in
 		// the order
 		shipping_cost: 1.00,
 
-		// total: Number - A valid number with the total cost of the basket including any known tax,
+		// {Number}
+		// A valid number with the total cost of the basket including any known tax,
 		// shipping and discounts
 		total: 123.00,
 
-		// items: Array - An array of Product Universal Variable
+		// {Array}
+		// An array of Product Universal Variable
 		items: [Product, Product, Product,...]
 	}
 }
@@ -182,55 +202,67 @@ window.qubit_universal_vars = {
 
 
 ## Transaction
-Transaction Universal Variable describes a completed purchase.
+Transaction Universal Variable describes a completed purchase. It also requires a list of [Product Universal Variable](#product) in the `item` array.
 
 Specification:
 ```javascript
 window.qubit_universal_vars = {
 	transaction: {
-		// order_id: String - A unique identifier for the order
+		// {String}
+		// A unique identifier for the order
 		order_id: "WEB123456",
 
-		// currency: String - The standard letter code in captials for the currency type in which
+		// {String}
+		// The standard letter code in captials for the currency type in which
 		// the order is being paid, eg EUR, USD, GBP
 		currency: "GBP",
 
-		// subtotal: Number - A valid number with the total amount the order including tax per item,
+		// {Number}
+		// A valid number with the total amount the order including tax per item,
 		// but not including shipping or discounts
 		subtotal: 123.00,
 
-		// tax: Number - A valid number with the total amount of tax included in the order
+		// {Number}
+		// A valid number with the total amount of tax included in the order
 		tax: 10.00,
 
-		// shipping_cost: Number - A valid number with the total amount of shipping costs included in the
+		// {Number}
+		// A valid number with the total amount of shipping costs included in the
 		// order
 		shipping_cost: 0.00,
 
-		// total: Number - A valid number with the total cost including tax, shipping and discounts
+		// {Number}
+		// A valid number with the total cost including tax, shipping and discounts
 		total: 130.00,
 
 		delivery: {		
-			// city: String - The city to which the order is to be dispatched
+			// {String}
+			// The city to which the order is to be dispatched
 			city: "London",
 
-			// state: String - The state to which the order is to be dispatched
+			// {String}
+			// The state to which the order is to be dispatched
 			state: "London",
 
-			// postcode: String - The post code to which the order is to be dispatched
+			// {String}
+			// The post code to which the order is to be dispatched
 			postcode: "SW1 1AB",
 			
-			// country: String - The country to which the order is to be dispatched
+			// {String}
+			// The country to which the order is to be dispatched
 			country: "UK",
 		},
 
-		// voucher: String - The voucher code entered
+		// {String}
+		// The voucher code entered
 		voucher: "MYVOUCHER",
 
-		// voucher_discount: Number - A valid number with the total amount of discount due to the voucher
-		// entered
+		// {Number}
+		// A valid number with the total amount of discount due to the voucher entered
 		voucher_discount: 0.00,
 
-		// items: Array - An array of Product Universal Variable 
+		// {Array}
+		// An array of Product Universal Variable 
 		items: [Product, Product, Product, ...]
 	}
 }
@@ -238,7 +270,7 @@ window.qubit_universal_vars = {
 
 ## Search
 
-Search Universal Variable describes a search results. It simply contains a list of [Product Universal Variable](#product)
+Search Universal Variable describes a search results. It contains a list of [Product Universal Variable](#product)
 
 Specification:
 ```javascript
