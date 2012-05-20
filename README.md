@@ -155,27 +155,25 @@ Specification:
 
 ``` javascript
 window.qubit_universal_vars = {
-
 	basket: {
+		// currency: String - The standard letter code in capitals for the currency type in which the
+		// order is being paid, eg: EUR, USD, GBP
+		currency: "GBP",
 
 		// subtotal: Number - A valid number with the total cost of the basket including any known tax per
 		// item, but not including shipping or discounts
 		subtotal: 12.00,
 
-		// total: Number - A valid number with the total cost of the basket including any known tax,
-		// shipping and discounts
-		total: 123.00,
-
 		// tax: Number - A valid number with the total amount of potential tax included in the order
 		tax: 12.00,
 
-		// shipping: Number - A valid number with the total amount of potential shipping costs included in
+		// shipping_cost: Number - A valid number with the total amount of potential shipping costs included in
 		// the order
-		shipping: 1.00,
+		shipping_cost: 1.00,
 
-		// currency: String - The standard letter code in capitals for the currency type in which the
-		// order is being paid, eg: EUR, USD, GBP
-		currency: "GBP",
+		// total: Number - A valid number with the total cost of the basket including any known tax,
+		// shipping and discounts
+		total: 123.00,
 
 		// items: Array - An array of Product Universal Variable
 		items: [Product, Product, Product,...]
@@ -188,39 +186,42 @@ window.qubit_universal_vars = {
 Transaction Universal Variable describes a completed purchase.
 
 ```javascript
+window.qubit_universal_vars = {
 	transaction: {
-		// orderId: String - A unique identifier for the order
-		orderId: "WEB123456",
+		// order_id: String - A unique identifier for the order
+		order_id: "WEB123456",
 
-		// orderSubtotal: Number - A valid number with the total amount the order including tax per item,
-		// but not including shipping or discounts
-		orderSubtotal: 123.00,
-
-		// orderTotal: Number - A valid number with the total cost including tax, shipping and discounts
-		orderTotal: 130.00,
-
-		// orderTax: Number - A valid number with the total amount of tax included in the order
-		orderTax: 10.00,
-
-		// orderShipping: Number - A valid number with the total amount of shipping costs included in the
-		// order
-		orderShipping: 0.00,
-
-		// orderCurrency: String - The standard letter code in captials for the currency type in which
+		// currency: String - The standard letter code in captials for the currency type in which
 		// the order is being paid, eg EUR, USD, GBP
-		orderCurrency: "GBP",
+		currency: "GBP",
 
-		// city: String - The city to which the order is to be dispatched
-		city: "London",
+		// subtotal: Number - A valid number with the total amount the order including tax per item,
+		// but not including shipping or discounts
+		subtotal: 123.00,
 
-		// state: String - The state to which the order is to be dispatched
-		state: "London",
+		// tax: Number - A valid number with the total amount of tax included in the order
+		tax: 10.00,
 
-		// postCode: String - The post code to which the order is to be dispatched
-		postCode: "SW1 1AB",
-		
-		// country: String - The country to which the order is to be dispatched
-		country: "UK",
+		// shipping_cost: Number - A valid number with the total amount of shipping costs included in the
+		// order
+		shipping_cost: 0.00,
+
+		// total: Number - A valid number with the total cost including tax, shipping and discounts
+		total: 130.00,
+
+		delivery: {		
+			// city: String - The city to which the order is to be dispatched
+			city: "London",
+
+			// state: String - The state to which the order is to be dispatched
+			state: "London",
+
+			// postcode: String - The post code to which the order is to be dispatched
+			postcode: "SW1 1AB",
+			
+			// country: String - The country to which the order is to be dispatched
+			country: "UK",
+		},
 
 		// voucher: String - The voucher code entered
 		voucher: "MYVOUCHER",
@@ -232,6 +233,7 @@ Transaction Universal Variable describes a completed purchase.
 		// items: Array - An array of Product Universal Variable 
 		items: [Product, Product, Product, ...]
 	}
+}
 ```
 
 
