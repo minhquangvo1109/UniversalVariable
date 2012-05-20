@@ -2,12 +2,14 @@
 
 QuBit Universal Variables are our suggested way to structure the data presented on your pages. With QuBit Universal Variables, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
-Below you will see 5 different main objects:
-* Page: Details of the page type and category
-* User: Details of the logged in user, or the visitor
-* Product: Details of the product the user is currently viewing
-* Basket: Details of the products the user has added to the
-* Transaction: Details of a purchase or transaction
+Below you will see 7 different main objects:
+* [User](#user): Details of the logged in user, or the visitor
+* [Page](#page): Details of the page type and category
+* [Product](#product): Details of the product the user is currently viewing
+* [Basket](#basket): Details of the products the user has added to the
+* [Transaction](#transaction): Details of a purchase or transaction
+* [Search](#search): Details of a search result
+* [Recommendation](#recommendation): Details of a recommendataion
 
 QuBit OpenTag recommends creating the releavant JavaScript object on your page prior to the OpenTag container script. This will assure the values are present on the page when a script tries to access them.
 
@@ -50,7 +52,6 @@ window.qubit_universal_vars = {
 The User Universal Variable describes a user. It may be created on any page.
 
 Specification:
-
 ``` javascript
 window.qubit_universal_vars = {
 	user: {
@@ -80,14 +81,13 @@ window.qubit_universal_vars = {
 The Product universal variable describes a single product information. `Product` is usually displayed in a number of pages, or even sections with in a page. The Product Universal Variable provides a single specification to desribe a product information. 
 
 When the variable is used with `product` key, it represents a single product page. It can also composite with other universal variables:
-* `transaction` variable may have an array of products as purchasd products
-* `basket` variable may have an array of products as items in the basket
-* `search` variable may have an array of products as search results
-* `recommendation` variable may have an array of products as recommended items for purchase
-* `product` variable itself may also have an array of products as sub products
+* [`product` variable](#product) itself may also have an array of products as sub products
+* [`basket` variable](#basket) may have an array of products as items in the basket
+* [`transaction` variable](#transaction) may have an array of products as purchasd products
+* [`search` variable](#search) may have an array of products as search results
+* [`recommendation` variable](#recommendation) may have an array of products as recommended items for purchase
 
 Specification:
-
 ``` javascript
 window.qubit_universal_vars = {
 	product: {
@@ -152,7 +152,6 @@ window.qubit_universal_vars = {
 The Basket Universal Variable describes the current state of the a user's shopping basket.
 
 Specification:
-
 ``` javascript
 window.qubit_universal_vars = {
 	basket: {
@@ -185,6 +184,7 @@ window.qubit_universal_vars = {
 ## Transaction
 Transaction Universal Variable describes a completed purchase.
 
+Specification:
 ```javascript
 window.qubit_universal_vars = {
 	transaction: {
@@ -236,4 +236,28 @@ window.qubit_universal_vars = {
 }
 ```
 
+## Search
 
+Search Universal Variable describes a search results. It simply contains a list of [Product Universal Variable](#product)
+
+Specification:
+```javascript
+window.qubit_universal_vars = {
+	search: {
+		items: [Product, Product, Product, ...]
+	}
+}
+```
+
+## Recommendation
+
+Recommendation Universal Variable describes a recommended product list. It contains a list of [Product Universal Variable](#product)
+
+Specification:
+```javascript
+window.qubit_universal_vars = {
+	recommendation: {
+		items: [Product, Product, Product, ...]
+	}
+}
+```
