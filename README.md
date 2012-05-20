@@ -116,6 +116,10 @@ window.qubit_universal_vars = {
 		// The sub-category of the product that is being viewed
 		sub_category: "Trainers",
 
+		// {Array} of {Product Universal Variable}
+		// An array of sub products
+		sub_products: [Product, Product, Product, ...],
+
 		// {Array} of {String}
 		// An SKU code for each item that is being viewed - these should be unique for items
 		// which differ by colour or size. This is for the case where multiple SKUs
@@ -193,9 +197,9 @@ window.qubit_universal_vars = {
 		// shipping and discounts
 		total: 123.00,
 
-		// {Array}
-		// An array of Product Universal Variable
-		items: [Product, Product, Product,...]
+		// {Array} of {Product Universal Variable}
+		// An array of products
+		items: [Product, Product, Product, ...]
 	}
 }
 ```
@@ -261,8 +265,8 @@ window.qubit_universal_vars = {
 		// A valid number with the total amount of discount due to the voucher entered
 		voucher_discount: 0.00,
 
-		// {Array}
-		// An array of Product Universal Variable 
+		// {Array} of {Product Universal Variable}
+		// An array of product
 		items: [Product, Product, Product, ...]
 	}
 }
