@@ -150,9 +150,9 @@ window.qubit_universal_vars = {
 		// A text describes colour of the item
 		colour: "blue",
 
-		// {Boolean} 
-		// true if the item is in stock
-		in_stock: true,
+		// {Number} 
+		// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
+		stock: 10,
 
 		// {Number}
 		// The cost of a single unit of the item that is being viewed
@@ -236,9 +236,13 @@ window.qubit_universal_vars = {
 		currency: "GBP",
 
 		// {Number}
-		// A valid number with the total amount the order including tax per item,
+		// A valid number with the total amount the order,
 		// but not including shipping or discounts
 		subtotal: 123.00,
+
+		// {Boolean}
+		// A boolean true or false to indicate whether subtotal includes tax
+		subtotal_include_tax: true,
 
 		// {Number}
 		// A valid number with the total amount of tax included in the order
@@ -268,6 +272,25 @@ window.qubit_universal_vars = {
 			
 			// {String}
 			// The country to which the order is to be dispatched
+			country: "UK",
+		},
+
+
+		billing: {		
+			// {String}
+			// The city to which the billing is set
+			city: "London",
+
+			// {String}
+			// The state to which the billing is set
+			state: "London",
+
+			// {String}
+			// The postcode to which the billing is set
+			postcode: "SW1 1AB",
+			
+			// {String}
+			// The country to which the billing is set
 			country: "UK",
 		},
 
