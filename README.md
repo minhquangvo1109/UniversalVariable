@@ -36,13 +36,20 @@ Specification:
 ``` javascript
 window.qubit_universal_vars = {
 	page: {
-		// category: String - The type of page this is, i.e: home, product, category, search,
+		// {String}
+		// The type of page this is, i.e: home, product, category, search,
 		// basket, checkout, confirmation
 		category: "product",
 
-		// subCategory: String A more detailed description of the page, eg: if Category is
+		// {String}
+		// A more detailed description of the page, eg: if Category is
 		// "category", subCategory may be "Mens Shirts"
-		sub_category: "Mens Shirts"
+		sub_category: "Mens Shirts",
+
+		// {String}
+		// Optional, describe a version of the page if the page
+		// has different versions for testing
+		version: ""
 	}
 }
 ```
@@ -51,11 +58,13 @@ or
 
 ``` javascript
 window.qubit_universal_vars.page = {
-	// category: String - The type of page this is, i.e: home, product, category, search,
+	// {String}
+	// The type of page this is, i.e: home, product, category, search,
 	// basket, checkout, confirmation
 	category: "product",
 
-	// subCategory: String A more detailed description of the page, eg: if Category is
+	// {String}
+	// A more detailed description of the page, eg: if Category is
 	// "category", subCategory may be "Mens Shirts"
 	sub_category: "Mens Shirts"
 }
@@ -69,22 +78,28 @@ Specification:
 ``` javascript
 window.qubit_universal_vars = {
 	user: {
-		// name: String - The name of the user
+		// {String}
+		// The name of the user
 		name: "Name",
 
-		// username: String - The user  name of the logged in user
+		// {String}
+		// The user  name of the logged in user
 		username: "username",
 
-		// email: String - The email address of the logged in user
+		// {String} 
+		// The email address of the logged in user
 		email: "user@example.com",
 
-		// returning: Boolean - true if the user is a returning user, otherwise false
+		// {Boolean}
+		// true if the user is a returning user, otherwise false
 		returning: true,
 		
-		// facebook_id: Number - Facebook id of the logged in user
+		// {Number}
+		// Facebook id of the logged in user
 		facebook_id: 12345678901232345,
 
-		// twtter_id: String - Twitter id
+		// {String}
+		// Twitter id
 		twitter_id: "myid"
 	}
 }
