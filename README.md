@@ -47,6 +47,20 @@ window.qubit_universal_vars = {
 }
 ```
 
+or
+
+``` javascript
+window.qubit_universal_vars.page = {
+	// category: String - The type of page this is, i.e: home, product, category, search,
+	// basket, checkout, confirmation
+	category: "product",
+
+	// subCategory: String A more detailed description of the page, eg: if Category is
+	// "category", subCategory may be "Mens Shirts"
+	sub_category: "Mens Shirts"
+}
+```
+
 ## User
 
 The User Universal Variable describes a user. It may be created on any page.
