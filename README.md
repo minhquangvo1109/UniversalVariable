@@ -118,7 +118,7 @@ window.universal_variable = {
 
 		// {String}
 		// Twitter id
-		twitter_id: "myid",
+		twitter_id: "myid"
 
 	}
 }
