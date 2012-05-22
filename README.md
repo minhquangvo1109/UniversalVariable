@@ -179,53 +179,40 @@ window.universal_variable = {
 				stock: 10
 			}
 		],
+			
+		// {String}
+		// The SKU code for the product is being viewed
+		sku_code: 123,
 
 		// {String}
-		// The current selected product SKU
-		selected_sku: {
-			
-			sku_code: 123,
-
-			// {String}
-			// A text describes color of the item
-			color: "",
-			
-			size: "",
-
-			// {Number} 
-			// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
-			stock: 10,
-
-			// {Number}
-			// The cost of a single unit of the item that is being viewed
-			unit_price: 123.00,
-
-			// {Number}
-			// The number of units of this item that are selected
-			quantity: 1,
-
-
-			// {Number}
-			// The price of the item taking into account any sales or special
-			// circumstances
-			unit_sale_price: 100.00
-		},
-
-		// Color
+		// A text describes color of the item being viewed
 		color: "WHITE",
+		
+		// {String}
+		// The size user currently selected
+		size: "M",
+
+		// {Number} 
+		// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
+		stock: 10,
+
+		// {Number}
+		// The cost of a single unit of the item that is being viewed
+		unit_price: 123.00,
+
+		// {Number}
+		// The number of units of this item that are selected
+		quantity: 1,
+
+		// {Number}
+		// The price of the item taking into account any sales or special
+		// circumstances
+		unit_sale_price: 100.00
 
 		// {String}
 		// The standard letter code in captials for the currency type.
 		// The currency for this product, eg EUR, USD, GBP
 		currency: "GBP",
-
-		// {Number}
-		// The cost of a single unit of the item that is being viewed
-		unit_price: { GBP: 123.00, EUR: 150.00 },
-
-		// {Number}
-		// The price of the item taking into account any sales or special
-		unit_sale_price: { GBP: 123.00, EUR: 150.00 },
 
 		// {Number}
 		// The voucher code entered (only necessary if different from transaction)
