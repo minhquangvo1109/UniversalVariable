@@ -19,12 +19,21 @@ Below for each object and variable you will see a data type: String or Number; a
 
 ## Namespace
 
-All universal variable should be assigned to `window` object under `qubit_universal_vars` object.
+All universal variable should be assigned to `window` object under `universal_variable` object.
 
 example:
 
 ``` javascript
-window.qubit_universal_vars = {};
+window.universal_variable = {};
+```
+
+
+## Version
+
+A version variable defines the current specificaiton version is used.
+
+```javascript
+window.universal_variable.version = "0.9"
 ```
 
 ## Page
@@ -34,7 +43,7 @@ The Page Universal Variable describes a page type with category or sub-category.
 Specification:
 
 ``` javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	page: {
 		// {String}
 		// The type of page this is, i.e: home, product, category, search,
@@ -57,7 +66,7 @@ window.qubit_universal_vars = {
 or
 
 ``` javascript
-window.qubit_universal_vars.page = {
+window.universal_variable.page = {
 	// {String}
 	// The type of page this is, i.e: home, product, category, search,
 	// basket, checkout, confirmation
@@ -76,19 +85,28 @@ The User Universal Variable describes a user. It may be created on any page.
 
 Specification:
 ``` javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	user: {
 		// {String}
 		// The name of the user
 		name: "Name",
 
 		// {String}
-		// The user  name of the logged in user
+		// The name with which the user uses to login
 		username: "username",
+
+		// {String}
+		// An internal user identifier
+		user_id: "",
 
 		// {String} 
 		// The email address of the logged in user
 		email: "user@example.com",
+
+		// {String}
+		// User preferred Language from a language standard list
+		// ISO language code list ISO 639-1
+		language: "en-gb",
 
 		// {Boolean}
 		// true if the user is a returning user, otherwise false
@@ -100,7 +118,8 @@ window.qubit_universal_vars = {
 
 		// {String}
 		// Twitter id
-		twitter_id: "myid"
+		twitter_id: "myid",
+
 	}
 }
 ```
@@ -118,16 +137,11 @@ When the variable is used with `product` key, it represents a single product pag
 
 Specification:
 ``` javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	product: {
 		// {String}
 		// The identifier for the item that is being viewed. This is product ID, NOT SKU id
 		id: "ABC123",
-
-		// {String}
-		// The SKU code for the item that is being viewed - this should be unique for items
-		// which differ by colour or size. This is for the case where only one SKU are selectable
-		sku: "12345678",
 
 		// {String}
 		// The name of the product that is being viewed
@@ -149,43 +163,64 @@ window.qubit_universal_vars = {
 		// An array of sub products
 		sub_products: [Product, Product, Product, ...],
 
-		// {Array} of {String}
+		// {Array} of {SKU} object
 		// An SKU code for each item that is being viewed - these should be unique for items
-		// which differ by colour or size. This is for the case where multiple SKUs
+		// which differ by color or size. This is for the case where multiple SKUs
 		// are selectable
-		skus: ["1111111", "222222", "33333"],
-
-		// {Array}  of {String}
-		// An array of the sizes which are presented for the product being
-		// viewed. Each element should be a string, optionally ["small", "medium", "large"] or ["A", "B",
-		// "C", "D", "DD"]
-		sizes: ["8", "9", "10"],
+		skus: [
+			{
+				id: 123,
+				color: "",
+				size: "",
+				stock: 10
+			}
+		],
 
 		// {String}
-		// A text describes colour of the item
-		colour: "blue",
+		// The current selected product SKU
+		selected_sku: {
+			
+			id: 123,
 
-		// {Number} 
-		// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
-		stock: 10,
+			// {String}
+			// A text describes color of the item
+			color: "",
+			
+			size: "",
 
-		// {Number}
-		// The cost of a single unit of the item that is being viewed
-		unit_price: 14.99,
+			// {Number} 
+			// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
+			stock: 10,
+
+			// {Price}
+			// price object, The cost of a single unit of the item that is being viewed
+			// { GBP: 123.00, EUR: 150.00 }
+			unit_price: 123.00,
+
+			// {Number}
+			// The number of units of this item that are selected
+			quantity: 1,
+
+
+			// {Price}
+			// The price of the item taking into account any sales or special
+			// circumstances
+			unit_sale_price: { GBP: 100.00, EUR: 130.00 }
+
+		},
+
+		// Color
+		color: "WHITE",
+
+		// {Price}
+		// price object, The cost of a single unit of the item that is being viewed
+		// { GBP: 123.00, EUR: 150.00 }
+		unit_price: { GBP: 123.00, EUR: 150.00 },
 
 		// {Number}
 		// The price of the item taking into account any sales or special
 		// circumstances
-		unit_sale_price: 10.99,
-
-		// {String}
-		// The currency in which the unit price is displayed. Three letter ISO
-		// code: GBP, EUR, USD etc.
-		unit_price_currency: "GBP",
-
-		// {Number}
-		// The number of units of this item in the basket
-		quantity: 1,
+		unit_sale_price: { GBP: 123.00, EUR: 150.00 },
 
 		// {Number}
 		// The voucher code entered (only necessary if different from transaction)
@@ -200,17 +235,17 @@ The Basket Universal Variable describes the current state of the a user's shoppi
 
 Specification:
 ``` javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	basket: {
 		// {String}
 		// The standard letter code in capitals for the currency type in which the
 		// order is being paid, eg: EUR, USD, GBP
-		currency: "GBP",
+		selected_currency: "GBP",
 
-		// {Number}
+		// {Price}
 		// A valid number with the total cost of the basket including any known tax per
 		// item, but not including shipping or discounts
-		subtotal: 12.00,
+		subtotal: { GBP: 123.00, EUR: 150.00 },
 
 		// {Number}
 		// A valid number with the total amount of potential tax included in the order
@@ -239,7 +274,7 @@ Transaction Universal Variable describes a completed purchase. It also requires 
 
 Specification:
 ```javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	transaction: {
 		// {String}
 		// A unique identifier for the order
@@ -330,7 +365,7 @@ Search Universal Variable describes a search results. It contains a list of [Pro
 
 Specification:
 ```javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	search: {
 		items: [Product, Product, Product, ...]
 	}
@@ -343,7 +378,7 @@ Recommendation Universal Variable describes a recommended product list. It conta
 
 Specification:
 ```javascript
-window.qubit_universal_vars = {
+window.universal_variable = {
 	recommendation: {
 		items: [Product, Product, Product, ...]
 	}
