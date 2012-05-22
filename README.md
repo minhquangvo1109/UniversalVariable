@@ -237,7 +237,11 @@ window.universal_variable = {
 		// {Price}
 		// A valid number with the total cost of the basket including any known tax per
 		// item, but not including shipping or discounts
-		subtotal: { GBP: 123.00, EUR: 150.00 },
+		subtotal: 123.00,
+
+		// {Boolean}
+		// A boolean true or false to indicate whether subtotal includes tax
+		subtotal_include_tax: true,
 
 		// {Number}
 		// A valid number with the total amount of potential tax included in the order
