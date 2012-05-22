@@ -144,6 +144,10 @@ window.universal_variable = {
 		id: "ABC123",
 
 		// {String}
+		// URL for the current product
+		url: "http://wwww.example.com/product?=ABC123", 
+
+		// {String}
 		// The name of the product that is being viewed
 		name: "XYZShoes",
 
@@ -169,7 +173,7 @@ window.universal_variable = {
 		// are selectable
 		skus: [
 			{
-				id: 123,
+				sku_code: 123,
 				color: "",
 				size: "",
 				stock: 10
@@ -180,7 +184,7 @@ window.universal_variable = {
 		// The current selected product SKU
 		selected_sku: {
 			
-			id: 123,
+			sku_code: 123,
 
 			// {String}
 			// A text describes color of the item
@@ -192,9 +196,8 @@ window.universal_variable = {
 			// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
 			stock: 10,
 
-			// {Price}
-			// price object, The cost of a single unit of the item that is being viewed
-			// { GBP: 123.00, EUR: 150.00 }
+			// {Number}
+			// The cost of a single unit of the item that is being viewed
 			unit_price: 123.00,
 
 			// {Number}
@@ -202,24 +205,26 @@ window.universal_variable = {
 			quantity: 1,
 
 
-			// {Price}
+			// {Number}
 			// The price of the item taking into account any sales or special
 			// circumstances
-			unit_sale_price: { GBP: 100.00, EUR: 130.00 }
-
+			unit_sale_price: 100.00
 		},
 
 		// Color
 		color: "WHITE",
 
-		// {Price}
-		// price object, The cost of a single unit of the item that is being viewed
-		// { GBP: 123.00, EUR: 150.00 }
+		// {String}
+		// The standard letter code in captials for the currency type.
+		// The currency for this product, eg EUR, USD, GBP
+		currency: "GBP",
+
+		// {Number}
+		// The cost of a single unit of the item that is being viewed
 		unit_price: { GBP: 123.00, EUR: 150.00 },
 
 		// {Number}
 		// The price of the item taking into account any sales or special
-		// circumstances
 		unit_sale_price: { GBP: 123.00, EUR: 150.00 },
 
 		// {Number}
@@ -240,7 +245,7 @@ window.universal_variable = {
 		// {String}
 		// The standard letter code in capitals for the currency type in which the
 		// order is being paid, eg: EUR, USD, GBP
-		selected_currency: "GBP",
+		currency: "GBP",
 
 		// {Price}
 		// A valid number with the total cost of the basket including any known tax per
@@ -367,6 +372,9 @@ Specification:
 ```javascript
 window.universal_variable = {
 	search: {
+		// {String}
+		// The query
+		query: "shoes on sale",
 		items: [Product, Product, Product, ...]
 	}
 }
