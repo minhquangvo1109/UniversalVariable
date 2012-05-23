@@ -226,10 +226,6 @@ Specification:
 	// The number of product a user has added to the basket or purchased in a transaction
 	quantity: 1,
 
-	// {String}
-	// Optional. A voucher applied to this item.
-	voucher: "MYVOUCHER",
-
 	// {Number}
 	// The total cost of this line item including tax, excluding shipping
 	subtotal: 100.00
@@ -335,7 +331,11 @@ window.universal_variable = {
 		// A valid number with the total cost including tax, shipping and discounts
 		total: 130.00,
 
-		delivery: {		
+		delivery: {	
+			// {String}
+			// Optional. The full addresss including the street number, but without the city.
+			address: "234 High Street",
+
 			// {String}
 			// The city to which the order is to be dispatched
 			city: "London",
@@ -354,7 +354,11 @@ window.universal_variable = {
 		},
 
 
-		billing: {		
+		billing: {
+			// {String}
+			// Optional. The full addresss including the street number, but without the city.
+			address: "234 High Street",
+
 			// {String}
 			// The city to which the billing is set
 			city: "London",
