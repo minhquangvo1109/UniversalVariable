@@ -129,27 +129,38 @@ window.universal_variable = {
 The Product universal variable describes a single product information. `Product` is usually displayed in a number of pages, or even sections with in a page. The Product Universal Variable provides a single specification to desribe a product information. 
 
 When the variable is used with `product` key, it represents a single product page. It can also composite with other universal variables:
-* [`product` variable](#product) itself may also have an array of products as sub products
-* [`basket` variable](#basket) may have an array of products as items in the basket
-* [`transaction` variable](#transaction) may have an array of products as purchasd products
+* [`product` variable](#product) itself may also have an array of products as linked products
 * [`search` variable](#search) may have an array of products as search results
 * [`recommendation` variable](#recommendation) may have an array of products as recommended items for purchase
 
+`LineItem` universal variable also uses product object to describe a product added to basket or a purchased product. See [LineItem](#lineitem) section for further  detailed description.
+
+
 Specification:
-``` javascript
-window.universal_variable = {
+
+```javascript
+{ 
 	product: {
+
 		// {String}
-		// The identifier for the item that is being viewed. This is product ID, NOT SKU id
+		// The product identifier or ID. This is NOT SKU id
 		id: "ABC123",
 
 		// {String}
-		// URL for the current product
+		// The SKU code for the product is being viewed
+		sku_code: 123,
+
+		// {String}
+		// URL for the the product
 		url: "http://wwww.example.com/product?=ABC123", 
 
 		// {String}
-		// The name of the product that is being viewed
+		// The name of the product
 		name: "XYZShoes",
+
+		// {String}
+		// Long product description
+		description: "most popular shoes in our shop",
 
 		// {String}
 		// The manufactuter of the product that is being viewed
@@ -163,26 +174,9 @@ window.universal_variable = {
 		// The sub-category of the product that is being viewed
 		sub_category: "Trainers",
 
-		// {Array} of {Product Universal Variable}
+		// {Array} of {Product} Universal Variable
 		// An array of sub products
-		sub_products: [Product, Product, Product, ...],
-
-		// {Array} of {SKU} object
-		// An SKU code for each item that is being viewed - these should be unique for items
-		// which differ by color or size. This is for the case where multiple SKUs
-		// are selectable
-		skus: [
-			{
-				sku_code: 123,
-				color: "",
-				size: "",
-				stock: 10
-			}
-		],
-			
-		// {String}
-		// The SKU code for the product is being viewed
-		sku_code: 123,
+		linked_products: [Product, Product, Product, ...],
 
 		// {String}
 		// A text describes color of the item being viewed
@@ -201,13 +195,9 @@ window.universal_variable = {
 		unit_price: 123.00,
 
 		// {Number}
-		// The number of units of this item that are selected
-		quantity: 1,
-
-		// {Number}
 		// The price of the item taking into account any sales or special
 		// circumstances
-		unit_sale_price: 100.00
+		unit_sale_price: 100.00,
 
 		// {String}
 		// The standard letter code in captials for the currency type.
@@ -220,6 +210,32 @@ window.universal_variable = {
 	}
 }
 ```
+
+
+## LineItem
+The LineItem universal variable describes a number of [Product](#product) that has been added to the basket or processed in a transaction.
+
+Specification:
+```javascript
+{
+	// {Product}
+	// The Product Universal Variable
+	product: Product,
+
+	// {Number}
+	// The number of product a user has added to the basket or purchased in a transaction
+	quantity: 1,
+
+	// {String}
+	// Optional. A voucher applied to this item.
+	voucher: "MYVOUCHER",
+
+	// {Number}
+	// The total cost of this line item including tax, excluding shipping
+	subtotal: 100.00
+}
+```
+
 
 ## Basket
 
@@ -235,8 +251,7 @@ window.universal_variable = {
 		currency: "GBP",
 
 		// {Price}
-		// A valid number with the total cost of the basket including any known tax per
-		// item, but not including shipping or discounts
+		// A valid number with the total cost of the basket, but not including shipping or discounts
 		subtotal: 123.00,
 
 		// {Boolean}
@@ -252,14 +267,18 @@ window.universal_variable = {
 		// the order
 		shipping_cost: 1.00,
 
+		// {String}
+		// Optional. Describes the shipping method
+		shipping_method: "Standard Mail",
+
 		// {Number}
 		// A valid number with the total cost of the basket including any known tax,
 		// shipping and discounts
 		total: 123.00,
 
-		// {Array} of {Product Universal Variable}
-		// An array of products
-		items: [Product, Product, Product, ...]
+		// {Array} of {LineItem} Universal Variable
+		// An array of LineItem
+		line_items: [LineItem, LineItem, LineItem, ...]
 	}
 }
 ```
@@ -290,6 +309,15 @@ window.universal_variable = {
 		// A boolean true or false to indicate whether subtotal includes tax
 		subtotal_include_tax: true,
 
+
+		// {String}
+		// The voucher code entered
+		voucher: "MYVOUCHER",
+
+		// {Number}
+		// A valid number with the total amount of discount due to the voucher entered
+		voucher_discount: 0.00,
+
 		// {Number}
 		// A valid number with the total amount of tax included in the order
 		tax: 10.00,
@@ -297,7 +325,11 @@ window.universal_variable = {
 		// {Number}
 		// A valid number with the total amount of shipping costs included in the
 		// order
-		shipping_cost: 0.00,
+		shipping_cost: 1.00,
+
+		// {String}
+		// Optional. Describes the shipping method
+		shipping_method: "Standard Mail",
 
 		// {Number}
 		// A valid number with the total cost including tax, shipping and discounts
@@ -340,17 +372,9 @@ window.universal_variable = {
 			country: "UK",
 		},
 
-		// {String}
-		// The voucher code entered
-		voucher: "MYVOUCHER",
-
-		// {Number}
-		// A valid number with the total amount of discount due to the voucher entered
-		voucher_discount: 0.00,
-
-		// {Array} of {Product Universal Variable}
-		// An array of product
-		items: [Product, Product, Product, ...]
+		// {Array} of {LineItem} Universal Variable
+		// An array of LineItem
+		line_items: [LineItem, LineItem, LineItem, ...]
 	}
 }
 ```
@@ -364,8 +388,11 @@ Specification:
 window.universal_variable = {
 	search: {
 		// {String}
-		// The query
+		// Describes the search query by keywords or text
 		query: "shoes on sale",
+
+		// An Array of {Product}
+		// A list of Product universal variables, describes the search result
 		items: [Product, Product, Product, ...]
 	}
 }
@@ -379,6 +406,8 @@ Specification:
 ```javascript
 window.universal_variable = {
 	recommendation: {
+		// An Array of {Product}
+		// A list of Product universal variables, describes the recommendation result
 		items: [Product, Product, Product, ...]
 	}
 }
