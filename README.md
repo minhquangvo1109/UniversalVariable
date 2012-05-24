@@ -63,7 +63,7 @@ window.universal_variable = {
 		// {String}
 		// Optional. Specify a page variation if the current page
 		// represents a different test variation.
-		variation: "A",
+		variation: "Original",
 
 		// {String}
 		// Optional. A unique identifier to signify the rivision of the current page.
