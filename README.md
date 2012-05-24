@@ -150,7 +150,7 @@ The product displayed on the page can be represented in the following specificat
 window.universal_variable.product = Product
 ```
 
-The `Product` variable should follow the following format:
+The `Product` variable should follow the specificatio below.
 
 Product Specification:
 
@@ -345,7 +345,12 @@ window.universal_variable = {
 		// A valid number with the total cost including tax, shipping and discounts
 		total: 130.00,
 
-		delivery: {	
+		delivery: {
+
+			// {String}
+			// The full name of the delivery receiver.
+			name: "Full Name",
+
 			// {String}
 			// Optional. The full addresss including the street number, but without the city.
 			address: "234 High Street",
