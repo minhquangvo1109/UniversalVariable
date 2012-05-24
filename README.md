@@ -56,9 +56,18 @@ window.universal_variable = {
 		sub_category: "Mens Shirts",
 
 		// {String}
-		// Optional, describe a version of the page if the page
-		// has different versions for testing
-		version: ""
+		// Optional. The system environment through which this page
+		// is being viewed. e.g. production, uat, development
+		environment: "production",
+
+		// {String}
+		// Optional. Specify a page variation if the current page
+		// represents a different test variation.
+		variation: "A",
+
+		// {String}
+		// Optional. A unique identifier to signify the rivision of the current page.
+		revision: "1.1"
 	}
 }
 ```
