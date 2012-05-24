@@ -97,7 +97,7 @@ Specification:
 window.universal_variable = {
 	user: {
 		// {String}
-		// The name of the user
+		// The full name of the user.
 		name: "Name",
 
 		// {String}
@@ -144,79 +144,84 @@ When the variable is used with `product` key, it represents a single product pag
 
 `LineItem` universal variable also uses product object to describe a product added to basket or a purchased product. See [LineItem](#lineitem) section for further  detailed description.
 
-
-Specification:
+The product displayed on the page can be represented in the following specification:
 
 ```javascript
-{ 
-	product: {
+window.universal_variable.product = Product
+```
 
-		// {String}
-		// The product identifier or ID. This is NOT SKU id
-		id: "ABC123",
+The `Product` variable should follow the following format:
 
-		// {String}
-		// The SKU code for the product is being viewed
-		sku_code: 123,
+Product Specification:
 
-		// {String}
-		// URL for the the product
-		url: "http://wwww.example.com/product?=ABC123", 
+```javascript
+{
 
-		// {String}
-		// The name of the product
-		name: "XYZShoes",
+	// {String}
+	// The product identifier or ID. This is NOT SKU id
+	id: "ABC123",
 
-		// {String}
-		// Long product description
-		description: "most popular shoes in our shop",
+	// {String}
+	// The SKU code for the product is being viewed
+	sku_code: 123,
 
-		// {String}
-		// The manufactuter of the product that is being viewed
-		manufacturer: "Acme Corp",
+	// {String}
+	// URL for the the product
+	url: "http://wwww.example.com/product?=ABC123", 
 
-		// {String}
-		// The category of the product that is being viewed
-		category: "Shoe",
+	// {String}
+	// The name of the product
+	name: "XYZShoes",
 
-		// {String}
-		// The sub-category of the product that is being viewed
-		sub_category: "Trainers",
+	// {String}
+	// Long product description
+	description: "most popular shoes in our shop",
 
-		// {Array} of {Product} Universal Variable
-		// An array of sub products
-		linked_products: [Product, Product, Product, ...],
+	// {String}
+	// The manufactuter of the product that is being viewed
+	manufacturer: "Acme Corp",
 
-		// {String}
-		// A text describes color of the item being viewed
-		color: "WHITE",
-		
-		// {String}
-		// The size user currently selected
-		size: "M",
+	// {String}
+	// The category of the product that is being viewed
+	category: "Shoe",
 
-		// {Number} 
-		// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
-		stock: 10,
+	// {String}
+	// The sub-category of the product that is being viewed
+	sub_category: "Trainers",
 
-		// {Number}
-		// The cost of a single unit of the item that is being viewed
-		unit_price: 123.00,
+	// {Array} of {Product} Universal Variable
+	// An array of sub products
+	linked_products: [Product, Product, Product, ...],
 
-		// {Number}
-		// The price of the item taking into account any sales or special
-		// circumstances
-		unit_sale_price: 100.00,
+	// {String}
+	// A text describes color of the item being viewed
+	color: "WHITE",
+	
+	// {String}
+	// The size user currently selected
+	size: "M",
 
-		// {String}
-		// The standard letter code in captials for the currency type.
-		// The currency for this product, eg EUR, USD, GBP
-		currency: "GBP",
+	// {Number} 
+	// A number indicates the stock avalability. Set the value to 0 if the item is out of stock
+	stock: 10,
 
-		// {Number}
-		// The voucher code entered (only necessary if different from transaction)
-		voucher: "MYVOUCHER"
-	}
+	// {Number}
+	// The cost of a single unit of the item that is being viewed
+	unit_price: 123.00,
+
+	// {Number}
+	// The price of the item taking into account any sales or special
+	// circumstances
+	unit_sale_price: 100.00,
+
+	// {String}
+	// The standard letter code in captials for the currency type.
+	// The currency for this product, eg EUR, USD, GBP
+	currency: "GBP",
+
+	// {Number}
+	// The voucher code entered (only necessary if different from transaction)
+	voucher: "MYVOUCHER"
 }
 ```
 
