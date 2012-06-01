@@ -1,4 +1,4 @@
-# QuBit Universal Variable Specification Version 0.9 (DRAFT)
+# QuBit Universal Variable Specification Version 1.0.0 (DRAFT)
 
 QuBit Universal Variable is our suggested way to structure the data presented on your pages. With QuBit Universal Variable, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
@@ -13,9 +13,9 @@ Below you will see 7 different main objects:
 
 QuBit OpenTag recommends creating the releavant JavaScript object on your page prior to the OpenTag container script. This will assure the values are present on the page when a script tries to access them.
 
-If a page does not have the variables of an object are mentioned below, simply do not even declare them. For example, if your pages only have category and no subcategory, just declare your category. Likewise, if you feel the need to extend the objects below or feel like renaming them, please do so. However, please take a note of the new variable names or the edited ones, because in order to access them from your scripts in your OpenTag container, you will need to indicate the new variable names.
+If a page does not have the variables of an object that are mentioned below, simply do not even declare them. For example, if your pages only have category and no subcategory, just declare your category. Likewise, if you feel the need to extend the objects below or feel like renaming them, please do so. However, please take a note of the new variable names or the edited ones, because in order to access them from your scripts in your OpenTag container, you will need to use the new variable names.
 
-Below for each object and variable you will see a data type: String, Number, Boolean, Array; along with examples and comments about what they represent. Please review them carefully.  When you implement them, please make sure that the resultant generated code is a valid JavaScript.
+Below for each object and variable you will see a data type: String, Number, Boolean, Array; along with examples and comments about what they represent. Please review them carefully.  Additionally, when you implement them, please make sure that the resultant generated code is a valid JavaScript.
 
 ## Namespace
 
@@ -33,7 +33,7 @@ window.universal_variable = {};
 A version variable defines the current specificaiton version is used.
 
 ```javascript
-window.universal_variable.version = "0.9"
+window.universal_variable.version = "1.0.0";
 ```
 
 ## Page
@@ -135,14 +135,14 @@ window.universal_variable = {
 
 ## Product
 
-The Product universal variable describes a single product information. `Product` is usually displayed in a number of pages, or even sections with in a page. The Product Universal Variable provides a single specification to desribe a product information. 
+The Product universal variable describes a single product information. `Product` is usually displayed in a number of pages, or even sections within a page. The Product Universal Variable provides a single specification to desribe a product information. 
 
 When the variable is used with `product` key, it represents a single product page. It can also composite with other universal variables:
 * [`product` variable](#product) itself may also have an array of products as linked products
 * [`search` variable](#search) may have an array of products as search results
 * [`recommendation` variable](#recommendation) may have an array of products as recommended items for purchase
 
-`LineItem` universal variable also uses product object to describe a product added to basket or a purchased product. See [LineItem](#lineitem) section for further  detailed description.
+`LineItem` universal variable also uses product object to describe a product added to basket or a purchased product. See [LineItem](#lineitem) section for further detailed description.
 
 The product displayed on the page can be represented in the following specification:
 
@@ -189,7 +189,7 @@ Product Specification:
 	// The sub-category of the product that is being viewed
 	sub_category: "Trainers",
 
-	// {Array} of {Product} Universal Variable
+	// [Array] of {Product} Universal Variable
 	// An array of sub products
 	linked_products: [Product, Product, Product, ...],
 
@@ -286,7 +286,7 @@ window.universal_variable = {
 		// shipping and discounts
 		total: 123.00,
 
-		// {Array} of {LineItem} Universal Variable
+		// [Array] of {LineItem} Universal Variable
 		// An array of LineItem
 		line_items: [LineItem, LineItem, LineItem, ...]
 	}
@@ -374,6 +374,11 @@ window.universal_variable = {
 
 
 		billing: {
+		
+			// {String}
+			// The full name of the delivery receiver.
+			name: "Full Name",
+			
 			// {String}
 			// Optional. The full addresss including the street number, but without the city.
 			address: "234 High Street",
@@ -395,7 +400,7 @@ window.universal_variable = {
 			country: "UK",
 		},
 
-		// {Array} of {LineItem} Universal Variable
+		// [Array] of {LineItem} Universal Variable
 		// An array of LineItem
 		line_items: [LineItem, LineItem, LineItem, ...]
 	}
@@ -414,7 +419,7 @@ window.universal_variable = {
 		// Describes the search query by keywords or text
 		query: "shoes on sale",
 
-		// An Array of {Product}
+		// An [Array] of {Product}
 		// A list of Product universal variables, describes the search result
 		items: [Product, Product, Product, ...]
 	}
@@ -429,7 +434,7 @@ Specification:
 ```javascript
 window.universal_variable = {
 	recommendation: {
-		// An Array of {Product}
+		// An [Array] of {Product}
 		// A list of Product universal variables, describes the recommendation result
 		items: [Product, Product, Product, ...]
 	}
