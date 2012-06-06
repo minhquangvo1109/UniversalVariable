@@ -255,6 +255,11 @@ Specification:
 ``` javascript
 window.universal_variable = {
 	basket: {
+
+		// {String}
+		// The basket ID or cart ID
+		id: "BASKET2203",
+
 		// {String}
 		// The standard letter code in capitals for the currency type in which the
 		// order is being paid, eg: EUR, USD, GBP
