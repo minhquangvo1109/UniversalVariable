@@ -53,7 +53,7 @@ window.universal_variable = {
 		// {String}
 		// A more detailed description of the page, eg: if Category is
 		// "category", subCategory may be "Mens Shirts"
-		sub_category: "Mens Shirts",
+		subcategory: "Mens Shirts",
 
 		// {String}
 		// Optional. The system environment through which this page
@@ -84,7 +84,7 @@ window.universal_variable.page = {
 	// {String}
 	// A more detailed description of the page, eg: if Category is
 	// "category", subCategory may be "Mens Shirts"
-	sub_category: "Mens Shirts"
+	subcategory: "Mens Shirts"
 }
 ```
 
@@ -187,7 +187,7 @@ Product Specification:
 
 	// {String}
 	// The sub-category of the product that is being viewed
-	sub_category: "Trainers",
+	subcategory: "Trainers",
 
 	// [Array] of {Product} Universal Variable
 	// An array of sub products
