@@ -8,7 +8,7 @@ Below you will see 7 different main objects:
 * [Product](#product): Details of the product that is being viewed or present in basket, checkout, recommendation, etc.
 * [Basket](#basket): Details of the user basket/shopping cart
 * [Transaction](#transaction): Details of a purchase or transaction
-* [Product Listing](#listing): Details of a search result
+* [Product Listing](#listing): Details of a category or search result page
 * [Recommendation](#recommendation): Details of a recommendation
 
 QuBit OpenTag recommends creating the releavant JavaScript object on your page prior to the OpenTag container script. This will assure the values are present on the page when a script tries to access them.
