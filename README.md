@@ -8,7 +8,7 @@ Below you will see 7 different main objects:
 * [Product](#product): Details of the product that is being viewed or present in basket, checkout, recommendation, etc.
 * [Basket](#basket): Details of the user basket/shopping cart
 * [Transaction](#transaction): Details of a purchase or transaction
-* [Search](#search): Details of a search result
+* [Product Listing](#listing): Details of a search result
 * [Recommendation](#recommendation): Details of a recommendation
 
 QuBit OpenTag recommends creating the releavant JavaScript object on your page prior to the OpenTag container script. This will assure the values are present on the page when a script tries to access them.
@@ -412,14 +412,14 @@ window.universal_variable = {
 }
 ```
 
-## Search
+## Listing
 
-Search Universal Variable describes a search results. It contains a list of [Product Universal Variable](#product)
+The listing Universal Variable describes a product list, for example a category page or search results page. It contains a list of [Product Universal Variable](#product)
 
 Specification:
 ```javascript
 window.universal_variable = {
-	search: {
+	listing: {
 		// {String}
 		// Describes the search query by keywords or text
 		query: "shoes on sale",
