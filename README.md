@@ -139,7 +139,7 @@ The Product universal variable describes a single product information. `Product`
 
 When the variable is used with `product` key, it represents a single product page. It can also composite with other universal variables:
 * [`product` variable](#product) itself may also have an array of products as linked products
-* [`search` variable](#search) may have an array of products as search results
+* [`listing` variable](#listing) may have an array of products as search results
 * [`recommendation` variable](#recommendation) may have an array of products as recommended items for purchase
 
 `LineItem` universal variable also uses product object to describe a product added to basket or a purchased product. See [LineItem](#lineitem) section for further detailed description.
