@@ -163,7 +163,7 @@ Product Specification:
 
 	// {String}
 	// The SKU code for the product is being viewed
-	sku_code: 123,
+	sku_code: "123",
 
 	// {String}
 	// URL for the the product
