@@ -374,7 +374,8 @@ window.universal_variable = {
 			
 			// {String}
 			// The country to which the order is to be dispatched
-			country: "UK",
+			// Two-letter country codes defined in ISO 3166-1
+			country: "GB",
 		},
 
 
@@ -402,7 +403,8 @@ window.universal_variable = {
 			
 			// {String}
 			// The country to which the billing is set
-			country: "UK",
+			// Two-letter country codes defined in ISO 3166-1
+			country: "GB",
 		},
 
 		// [Array] of {LineItem} Universal Variable
