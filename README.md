@@ -272,6 +272,14 @@ window.universal_variable = {
 		// {Boolean}
 		// A boolean true or false to indicate whether subtotal includes tax
 		subtotal_include_tax: true,
+		
+		// {String}
+		// The voucher code entered
+		voucher: "MYVOUCHER",
+
+		// {Number}
+		// A valid number with the total amount of discount due to the voucher entered
+		voucher_discount: 0.00,
 
 		// {Number}
 		// A valid number with the total amount of potential tax included in the order
