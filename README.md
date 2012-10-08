@@ -1,4 +1,4 @@
-# QuBit Universal Variable Specification Version 1.0.0
+# QuBit Universal Variable Specification Version 1.0.1
 
 QuBit Universal Variable is our suggested way to structure the data presented on your pages. With QuBit Universal Variable, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
@@ -33,7 +33,7 @@ window.universal_variable = {};
 A version variable defines the current specificaiton version is used.
 
 ```javascript
-window.universal_variable.version = "1.0.0";
+window.universal_variable.version = "1.0.1";
 ```
 
 ## Page
