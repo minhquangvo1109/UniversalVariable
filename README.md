@@ -322,7 +322,7 @@ Properties:
 <table><tr><th>Property</th><th>JavaScript Key</th><th>Type</th><th>Description</th></tr>
 <tr><td>Transaction ID</td><td>order_id</td><td>String</td><td>A unique ID for this transaction.</td></tr>
 <tr><td>Transaction Currency</td><td>currency</td><td>String</td><td><i>Mandatory.  </i>The <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> code for the currency this transaction's costs are denominated in.</td></tr>
-<tr><td>Transaction Payment Type</td><td>payment_type<td></td><td>String</td><td>Payment method, e.g. 'Visa','PayPal','Voucher'.</td></tr>
+<tr><td>Transaction Payment Type</td><td>payment_type</td><td>String</td><td>Payment method, e.g. 'Visa','PayPal','Voucher'.</td></tr>
 <tr><td>Transaction Price</td><td>subtotal</td><td>Number</td><td>The transaction amount, excluding shipping or discounts.</td></tr>
 <tr><td>Transaction Includes Tax</td><td>subtotal_include_tax</td><td>Boolean</td><td>Indicates whether Transaction Price includes tax.</td></tr>
 <tr><td>Transaction Voucher Code</td><td>voucher</td><td>String</td><td>Voucher code entered.</td></tr>
@@ -436,7 +436,6 @@ The Eventlist object wraps an array of [Event](#event) objects.
 Properties:
 
 <table><tr><th>Property</th><th>JavaScript Key</th><th>Type</th><th>Description</th></tr>
-<tr><td>Ev</td><td>query</td><td>String</td><td>If the products are search results, the query that was entered.</td></tr>
 <tr><td>EventList Items</td><td>items</td><td>Array of <a href="#event">Event</a> objects</td><td>The events which have happened since the last page view, or during the current page view.</td></tr>
 </table>
 
@@ -447,7 +446,7 @@ The Event object identifies when something has just happened, either since the l
 Properties:
 
 <table><tr><th>Property</th><th>JavaScript Key</th><th>Type</th><th>Description</th></tr>
-<tr><td>Event Type</td><td>name</td><td>String</td><td>Label for the type of event that's taken place, e.g. 'conversion','signup'.</td></tr>
+<tr><td>Event Type</td><td>type</td><td>String</td><td>Label for the type of event that's taken place, e.g. 'conversion','signup'.</td></tr>
 <tr><td>Event Time</td><td>time</td><td>String</td><td>String representation of the time at which this event occurred.</td></tr>
 <tr><td>Event Cause</td><td>cause</td><td>String</td><td>Description of what caused this event, e.g. 'idle for 5 minutes'.</td></tr>
 <tr><td>Event Effect</td><td>effect</td><td>String</td><td>Description for any user-facing activity that happens as a result of this event, e.g. 'popup shown'.</td></tr>
