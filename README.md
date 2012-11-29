@@ -71,13 +71,13 @@ A very simple example of a universal_variable object would be:
 
 ``` javascript
 window.universal_variable = {
-	user: {
-		returning: "true"
+	"user": {
+		"returning": "true"
 	},
-	page: {
-		category: "home"
+	"page": {
+		"category": "home"
 	},
-	version: "1.1.0"
+	"version": "1.1.0"
 }
 ```
 
@@ -101,12 +101,12 @@ For example:
 
 ``` javascript
 window.universal_variable = {
-	page: {
-		category: "product",                     // the page is of type Product
-		subcategory: "Mens - Shirts - Formal",   // specifically, the Product page for mens formal shirts
-		environment: "production",
-		variation: "Original",
-		revision: "1.1"
+	"page": {
+		"category": "product",                     // the page is of type Product
+		"subcategory": "Mens - Shirts - Formal",   // specifically, the Product page for mens formal shirts
+		"environment": "production",
+		"variation": "Original",
+		"revision": "1.1"
 	}
 }
 ```
@@ -133,16 +133,16 @@ Example:
 
 ``` javascript
 window.universal_variable = {
-	user: {
-		name: "Example User",
-		username: "exampleuser123",
-		user_id: "8492834083",
-		email: "user@example.com",
-		language: "en-gb",
-		returning: true,
-		types: ['high-value','female']
-		facebook_id: 12345678901232345,
-		twitter_id: "myid"
+	"user": {
+		"name": "Example User",
+		"username": "exampleuser123",
+		"user_id": "8492834083",
+		"email": "user@example.com",
+		"language": "en-gb",
+		"returning": true,
+		"types": ["high-value","female"]
+		"facebook_id": 12345678901232345,
+		"twitter_id": "myid"
 	}
 }
 ```
@@ -213,22 +213,22 @@ See the following example of a populated Product object:
 ```javascript
 {
 
-	id: "ABC123",
-	sku_code: "123",
-	url: "http://www.example.com/product?=ABC123", 
-	name: "XYZShoes",
-	description: "most popular shoes in our shop",
-	manufacturer: "Acme Corp",
-	category: "Shoe",
-	subcategory: "Trainers",
-	linked_products: [Product, Product, Product, ...],
-	color: "WHITE",
-	size: "M",
-	stock: 10,
-	unit_price: 123.00,
-	unit_sale_price: 100.00,
-	currency: "GBP",
-	voucher: "MYVOUCHER"
+	"id": "ABC123",
+	"sku_code": "123",
+	"url": "http://www.example.com/product?=ABC123", 
+	"name": "XYZShoes",
+	"description": "most popular shoes in our shop",
+	"manufacturer": "Acme Corp",
+	"category": "Shoe",
+	"subcategory": "Trainers",
+	"linked_products": [Product, Product, Product, ...],
+	"color": "WHITE",
+	"size": "M",
+	"stock": 10,
+	"unit_price": 123.00,
+	"unit_sale_price": 100.00,
+	"currency": "GBP",
+	"voucher": "MYVOUCHER"
 }
 ```
 
@@ -249,14 +249,14 @@ Example:
 
 ```javascript
 {
-	product: {
-			url: "http://www.example.com/product?=ABC123", 
-			name: "ABC Trainers",
-			unit_price: 30.00
-			currency: "GBP"
+	"product": {
+			"url": "http://www.example.com/product?=ABC123", 
+			"name": "ABC Trainers",
+			"unit_price": 30.00
+			"currency": "GBP"
 		},
-	quantity: 1,
-	subtotal: 30.00
+	"quantity": 1,
+	"subtotal": 30.00
 }
 ```
 
@@ -284,16 +284,16 @@ Example:
 
 ``` javascript
 window.universal_variable = {
-	basket: {
-		id: "BASKET2203",
-		currency: "GBP",
-		subtotal: 123.00,
-		subtotal_include_tax: true,
-		tax: 12.00,
-		shipping_cost: 1.00,
-		shipping_method: "Standard Mail",
-		total: 123.00,
-		line_items: [LineItem, LineItem, LineItem, ...]
+	"basket": {
+		"id": "BASKET2203",
+		"currency": "GBP",
+		"subtotal": 123.00,
+		"subtotal_include_tax": true,
+		"tax": 12.00,
+		"shipping_cost": 1.00,
+		"shipping_method": "Standard Mail",
+		"total": 123.00,
+		"line_items": [LineItem, LineItem, LineItem, ...]
 	}
 }
 ```
@@ -318,12 +318,12 @@ Example:
 ``` javascript
 {
 
-	name: "My Name",
-	address: "234 High Street",
-	city: "London",
-	state: "London",
-	postcode: "SW1 1AB",
-	country: "GB"
+	"name": "My Name",
+	"address": "234 High Street",
+	"city": "London",
+	"state": "London",
+	"postcode": "SW1 1AB",
+	"country": "GB"
 }
 ```
 
@@ -354,37 +354,37 @@ Example:
 
 ```javascript
 window.universal_variable = {
-	transaction: {
-		order_id: "WEB123456",
-		currency: "GBP",
-		subtotal: 123.00,
-		subtotal_include_tax: true,
-		voucher: "MYVOUCHER",
-		voucher_discount: 0.00,
-		tax: 10.00,
-		shipping_cost: 1.00,
-		shipping_method: "Standard Mail",
-		total: 130.00,
+	"transaction": {
+		"order_id": "WEB123456",
+		"currency": "GBP",
+		"subtotal": 123.00,
+		"subtotal_include_tax": true,
+		"voucher": "MYVOUCHER",
+		"voucher_discount": 0.00,
+		"tax": 10.00,
+		"shipping_cost": 1.00,
+		"shipping_method": "Standard Mail",
+		"total": 130.00,
 
-		delivery: {
-			name: "Full Name",
-			address: "234 High Street",
-			city: "London",
-			state: "London",
-			postcode: "SW1 1AB",
-			country: "GB",
+		"delivery": {
+			"name": "Full Name",
+			"address": "234 High Street",
+			"city": "London",
+			"state": "London",
+			"postcode": "SW1 1AB",
+			"country": "GB",
 		},
 
-		billing: {
-			name: "Full Name",
-			address: "234 High Street",
-			city: "London",
-			state: "London",
-			postcode: "SW1 1AB",
-			country: "GB",
+		"billing": {
+			"name": "Full Name",
+			"address": "234 High Street",
+			"city": "London",
+			"state": "London",
+			"postcode": "SW1 1AB",
+			"country": "GB",
 		},
 
-		line_items: [LineItem, LineItem, LineItem, ...]
+		"line_items": [LineItem, LineItem, LineItem, ...]
 	}
 }
 ```
@@ -404,9 +404,9 @@ Example:
 
 ```javascript
 window.universal_variable = {
-	listing: {
-		query: "shoes on sale",
-		items: [Product, Product, Product, ...]
+	"listing": {
+		"query": "shoes on sale",
+		"items": [Product, Product, Product, ...]
 	}
 }
 ```
@@ -425,19 +425,19 @@ Example:
 
 ```javascript
 window.universal_variable = {
-	recommendation: {
-		items: [
+	"recommendation": {
+		"items": [
 		{
-			url: "http://www.example.com/product?=ABC123", 
-			name: "ABC Trainers"
+			"url": "http://www.example.com/product?=ABC123", 
+			"name": "ABC Trainers"
 		},
 		{
-			url: "http://www.example.com/product?=DEF123", 
-			name: "DEF Trainers"
+			"url": "http://www.example.com/product?=DEF123", 
+			"name": "DEF Trainers"
 		},
 		{
-			url: "http://www.example.com/product?=GHI123", 
-			name: "GHI Trainers"
+			"url": "http://www.example.com/product?=GHI123", 
+			"name": "GHI Trainers"
 		}, ...]
 	}
 }
@@ -470,9 +470,9 @@ Example:
 
 ```javascript
 window.universal_variable = {
-	events: [{
-		name: "newsletter_signup",
-		cause: "checkout_popup"
+	"events": [{
+		"name": "newsletter_signup",
+		"cause": "checkout_popup"
 	}]
 }
  ```
@@ -497,15 +497,15 @@ Example:
 
 ```javascript
 window.universal_variable = {
-	product: {
-		journeys: [{
-		type: "flight",
-		name: "Flight BA123 from London Heathrow",
-		code: "FLIGHTCODE123",
-		time: "2012-09-01 09:00",
-		adults: 2,
-		children: 2,
-		infants: 0
+	"product": {
+		"journeys": [{
+		"type": "flight",
+		"name": "Flight BA123 from London Heathrow",
+		"code": "FLIGHTCODE123",
+		"time": "2012-09-01 09:00",
+		"adults": 2,
+		"children": 2,
+		"infants": 0
 		}]
 	}
 }
@@ -532,16 +532,16 @@ Example:
 
 ```javascript
 window.universal_variable = {
-	product: {
-		accommodations: [{
-		type: "hotel",
-		name: "New York, Algonquin Hotel",
-		code: "BOOKINGCODE123",
-		checkin_time: "2012-09-01",
-		checkout_time: "2012-09-08",
-		adults: 2,
-		children: 2,
-		infants: 0
+	"product": {
+		"accommodations": [{
+		"type": "hotel",
+		"name": "New York, Algonquin Hotel",
+		"code": "BOOKINGCODE123",
+		"checkin_time": "2012-09-01",
+		"checkout_time": "2012-09-08",
+		"adults": 2,
+		"children": 2,
+		"infants": 0
 		}]
 	}
 }
