@@ -19,7 +19,10 @@ window.universal_variable = {};
 Set this to the string "1.1.0" to indicate that this version of the specification is being used.
 
 ```javascript
-window.universal_variable.version = "1.1.0";
+window.universal_variable = {
+	"version" : "1.1.0"
+	...
+}
 ```
 
 
