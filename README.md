@@ -26,9 +26,23 @@ window.universal_variable = {
 ```
 
 
-## Implementation Considerations
+## Implementation Hints
 
-This universal_variable JSON object must be created before any browser scripts that try to access it.  It is *imperative to use this structure*, as this ensures that the values are present on the page when a script tries to access them.  If the variables are created further down the page, they will not be picked up.  
+**DO**:
+
+* **Read the specification carefully and make sure you know exactly what value to store against each key.**  Because our specification is very wide-ranging, you may find similar (but different) properties under different keys - for example, a Product’s unit_sale_price is its price including discounts, but a Product’s unit_price does not include discounts.
+* **Use valid JSON:** this includes enclosing strings in quotes and avoiding trailing commas.  You may find it helpful to use an online tool such as JSONLint.com to validate your code.
+* **Use the correct JavaScript object types** as defined in the specification - for example, prices should always be unquoted JavaScript numbers.
+* **Declare window.universal_variable as high up in the page as possible**, so it can be used by other JavaScript code.
+* **Include the Universal Variable version number in your JavaScript code**, so you can be prepared for future updates to the Universal Variable standard.
+
+**DON’T**:
+
+* **Instantiate more parts of the Universal Variable object than you need** - for instance, there is probably no need to declare a completed Transaction on your site’s home page.
+* **Re-declare the whole Universal Variable when you only want to add to the existing window.universal_variable object**, or you’ll lose what has already been declared!
+* **Omit mandatory fields**, such as a LineItem’s Quantity field.
+* **Omit additional fields required in the specification**: for example, to declare a Product’s unit_sale_price, its currency must also be declared.
+
 
 ## A word on privacy
 
