@@ -260,6 +260,7 @@ Properties:
 <tr><td>LineItem Product</td><td>product</td><td><a href="#product">Product</a> object</td><td><i>Mandatory.</i> The product which has been added to the basket or transaction.</td></tr>
 <tr><td>LineItem Quantity</td><td>quantity</td><td>Number</td><td><i>Mandatory.</i> The number of this product that has been added to the basket or transaction.</td></tr>
 <tr><td>LineItem Subtotal</td><td>subtotal</td><td>Number</td><td>Total cost of this LineItem, including tax, excluding shipping.</td></tr>
+<tr><td>LineItem Total Discount</td><td>total_discount</td><td>Number</td><td>Total discount amount of this product for given quantity</td></tr>
 </table>
 
 Example:
