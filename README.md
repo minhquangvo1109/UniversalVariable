@@ -30,7 +30,7 @@ window.universal_variable = {
 
 **DO**:
 
-* **Read the specification carefully and make sure you know exactly what value to store against each key.**  Because our specification is very wide-ranging, you may find similar (but different) properties under different keys - for example, a Product’s `unit_sale_price` is its price including discounts, but a Product’s `unit_price` does not include discounts.
+* **Read the specification carefully and make sure you know exactly what value to store against each key.**  Because our specification is very wide-ranging, you may find similar (but different) properties under different keys - for example, a Product’s `unit_sale_price` is its product promotion unit price, but a Product’s `unit_price` does not include discounts. A store may apply additional discount on top of `unit_sale_price` for limited number of items, in this case, specify `line_items[i].total_discount` describe the final discount amount.
 * **Use valid JSON:** this includes enclosing strings in quotes and avoiding trailing commas.  You may find it helpful to use an online tool such as JSONLint.com to validate your code.
 * **Use the correct JavaScript object types** as defined in the specification - for example, prices should always be unquoted JavaScript numbers.
 * **Declare `window.universal_variable` as high up in the page as possible**, so it can be used by other JavaScript code.
@@ -273,7 +273,8 @@ Example:
 			"currency": "GBP"
 		},
 	"quantity": 1,
-	"subtotal": 30.00
+	"subtotal": 25.00,
+	"total_discount": 5.00
 }
 ```
 
