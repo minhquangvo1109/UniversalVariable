@@ -348,12 +348,13 @@ Example:
 
 ## Transaction
 
-The Transaction object describes a completed purchase.  If possible, this object should only be present when the transaction has just been completed and is no longer modifiable.
+The Transaction object describes a completed purchase, and could be displayed on a confirmation or receipt page.
 
 Properties:
 
 <table><tr><th>Property</th><th>JSON key</th><th>Type</th><th>Description</th></tr>
 <tr><td>Transaction ID</td><td>order_id</td><td>String</td><td>A unique ID for this transaction.</td></tr>
+<tr><td>Transaction Returning Status</td><td>returning</td><td>Boolean</td><td>False if this is the <b>first time</b> a user has been served this Transaction, i.e. it has just happened.  True if this Transaction has happened some time ago and its details are being reviewed.  For example, the Transaction object on a page served to a user when they have just completed a purchase should read 'False', but if the user returns to this page, for example when clicking a link sent in a confirmation email, it should read 'True'.</td></tr>
 <tr><td>Transaction Currency</td><td>currency</td><td>String</td><td><i>Mandatory.  </i>The <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> code for the currency this transaction's costs are denominated in.</td></tr>
 <tr><td>Transaction Payment Type</td><td>payment_type</td><td>String</td><td>Payment method, e.g. 'Visa','PayPal','Voucher'.</td></tr>
 <tr><td>Transaction Price</td><td>subtotal</td><td>Number</td><td>The transaction amount, excluding shipping or discounts.</td></tr>
