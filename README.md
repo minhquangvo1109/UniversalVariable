@@ -192,7 +192,7 @@ There are many possible types of product on the Web - here, we first list proper
 <tr><td>Product Currency</td><td>currency</td><td>String</td><td>The <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> code for the currency used for this product's prices.</td></tr>
 <tr><td>Product Price</td><td>unit_sale_price</td><td>Number</td><td>The price for a single unit of this product actually paid by a customer, taking into account any sales and promotions. <b>Note:</b> If a promotion involves selling the same product with different prices in the same transaction (e.g. ten units of a product are in a basket, where the first two receive a 10% discount, and the rest are discounted by 20%), implement the 'least discounted' version of the product using this Product object, and implement the further discount by using the `total_discount` property of the <a href="#lineitem">LineItem</a> object, which forms part of <a href="#basket">Baskets</a> and <a href="#transaction">Transactions</a>.<i>Requires Product Currency to be declared.</i></td></tr>
 <tr><td>Product Price Excluding Promotions</td><td>unit_price</td><td>Number</td><td>The price of a single unit of this product, not taking into account discounts and promotions.  <i>Requires Product Currency and Product Price to be declared.</i></td></tr>
-
+<tr><td>Product Reviews</td><td>reviews</td><td>Array of <a href="#review">Review</a> objects</td><td>Reviews that have been written (by customers or staff) about this Product.</td></tr>
 </table>
 
 ### Additional properties for products requiring stock keeping
@@ -270,7 +270,8 @@ Example:
 	"product": {
 			"url": "http://www.example.com/product?=ABC123", 
 			"name": "ABC Trainers",
-			"unit_price": 30.00
+			"unit_price": 30.00,
+			"unit_sale_price": 25.00,
 			"currency": "GBP"
 		},
 	"quantity": 1,
@@ -566,5 +567,34 @@ window.universal_variable = {
 	}
 }
  ```
+
+## Review
+
+ The Review object models a review of a [Product](#product).
+
+Properties:
+
+<table><tr><th>Property</th><th>JSON key</th><th>Type</th><th>Description</th></tr>
+<tr><td>Review Body</td><td>body</td><td>String</td><td>Body of this review.</td></tr>
+<tr><td>Review Rating</td><td>rating</td><td>String</td><td>How this review rates the Product.  For example, a score such as '5'.</td></tr>
+</table>
+
+Example:
+
+```javascript
+{
+	"product": {
+			"url": "http://www.example.com/product?=ABC123", 
+			"name": "ABC Trainers",
+			"unit_sale_price": 25.00
+			"currency": "GBP",
+			"reviews": [ {"body": "These are excellent trainers!", "rating": "5"},
+						 {"body": "Pretty good", "rating": "4"} ]
+		},
+	"quantity": 1,
+	"subtotal": 30.00,
+	"total_discount": 5.00
+}
+```
 
 
