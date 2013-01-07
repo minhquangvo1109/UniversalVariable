@@ -281,7 +281,7 @@ Example:
 
 ## Basket
 
-The Basket object describes the current state of the a user's shopping basket or cart.
+The Basket object describes the current state of the a user's shopping basket or cart.  It should be populated on any web page that displays basket information - this may include 'product' or 'category' pages, as well as pages that provide a detailed basket listing.
 
 Properties:
 
