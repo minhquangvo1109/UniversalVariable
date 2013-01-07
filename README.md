@@ -1,4 +1,4 @@
-# QuBit Universal Variable Specification Version 1.1.0
+# QuBit Universal Variable Specification Version 1.1.1
 
 QuBit Universal Variable is our suggested way to structure the data presented on your pages. With QuBit Universal Variable, our aim is to help you easily access the pieces of data you need on your pages from your containers.
 
@@ -16,11 +16,11 @@ window.universal_variable = {};
 
 ## Version
 
-Set this to the string "1.1.0" to indicate that this version of the specification is being used.
+Set this to indicate that this version of the specification is being used.
 
 ```javascript
 window.universal_variable = {
-	"version" : "1.1.0"
+	"version" : "1.1.1"
 	...
 }
 ```
@@ -73,7 +73,7 @@ universal_variable can contain any of the following properties:
 	<tr><td>listing</td><td><a href="#listing">Listing object</a></td><td>Multiple products that are present on a page, excluding recommendations (e.g. search results, or a product category page).</td></tr>
 	<tr><td>recommendation</td><td><a href="#recommendation">Recommendation object</a></td><td>Products that are recommended to the user on this page.</td></tr>
 	<tr><td>events</td><td><a href="#eventlist">EventList object</a></td><td>Identifies events that have just occurred.</td></tr>
-	<tr><td>version</td><td>String</td><td>Which version of this standard is being used, currently '1.1.0'.</td></tr>
+	<tr><td>version</td><td>String</td><td>Which version of this standard is being used.</td></tr>
 </table>
 
 ## Only declare what's necessary
@@ -94,7 +94,7 @@ window.universal_variable = {
 	"page": {
 		"category": "home"
 	},
-	"version": "1.1.0"
+	"version": "1.1.1"
 }
 ```
 
