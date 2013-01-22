@@ -141,6 +141,7 @@ Properties (all optional):
 <tr><td>User Email Address</td><td>email</td><td>String</td><td>The user's full email address.</td></tr>
 <tr><td>User Preferred Language</td><td>language</td><td>String</td><td>The user's preferred language, must be an <a href="http://en.wikipedia.org/wiki/IETF_language_tag">IETF compatible string</a>, e.g. 'en-us', 'en-gb'.  IETF codes start with an <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> language representation, and are extensible by region.</td></tr>
 <tr><td>User Returning Status</td><td>returning</td><td>Boolean</td><td>False if this page view forms part of the user's first visit to this site, True otherwise.</td></tr>
+<tr><td>User Transacted Status</td><td>has_transacted</td><td>Boolean</td><td>True if this user has completed a transaction at any time in the past (i.e. earlier in this visit, or during a previous visit).</td></tr>
 <tr><td>User Types</td><td>types</td><td>Array of Strings</td><td>Arbitrary labels to assign to this user, e.g. 'high-value','female'.</td></tr>
 <tr><td>User Facebook ID</td><td>facebook_id</td><td>Number</td><td>The user's Facebook User ID, as returned by the Facebook API.</td></tr>
 <tr><td>User Twitter ID</td><td>twitter_id</td><td>String</td><td>The user's Twitter ID.</td></tr>
