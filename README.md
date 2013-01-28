@@ -76,7 +76,7 @@ universal_variable can contain any of the following properties:
 	<tr><td>version</td><td>String</td><td>Which version of this standard is being used.</td></tr>
 </table>
 
-## Only declare what's necessary
+## Which Universal Variable properties should be populated?
 
 For each page, declare those parts of the Universal Variable that make up your visitor's browsing experience at that time.
 
