@@ -78,11 +78,13 @@ universal_variable can contain any of the following properties:
 
 ## Only declare what's necessary
 
-The universal variable object should be declared _lazily_: only include a property if it's actually necessary.  
+For each page, declare those parts of the Universal Variable that make up your visitor's browsing experience at that time.
 
-If a web site does not implement product recommendations, the window.universal_variable.recommendation object should not even be declared.
+* **DO** Include the User object wherever possible.  Even if the current user is not signed in, there could still be useful information such as their returning status or preferred language.
 
-The same applies to properties of objects.  For example, if a page has categories but not subcategories, simply leave out the 'subcategory' property, do not declare it with any value.
+* **DO** Include the basket page wherever possible: this includes pages where the basket is not the main feature of the page, such as product, category or home pages.
+
+* **DON'T** Instantiate several fields with 'null' or empty strings if you don't have a value to populate them with.  For example, if you don't know a user's Facebook ID, there's no need to include that field in the User object at all.  Similarly, if a web site does not implement product recommendations, the window.universal_variable.recommendation object should not even be declared.
 
 A very simple example of a universal_variable object would be:
 
@@ -130,7 +132,7 @@ window.universal_variable = {
 
 ## User
 
-The User object describes the current user of the web site.
+The User object describes the current user of the web site.  This object should be populated whether or not the user is logged in.
 
 Properties (all optional):
 
@@ -283,7 +285,7 @@ Example:
 
 ## Basket
 
-The Basket object describes the current state of the a user's shopping basket or cart.  It should be populated on any web page that displays basket information - this may include 'product' or 'category' pages, as well as pages that provide a detailed basket listing.
+The Basket object describes the current state of the a user's shopping basket or cart.  It should be populated on any web page that displays basket information - this may include 'home', 'product' or 'category' pages, as well as pages that provide a detailed basket listing.
 
 Properties:
 
