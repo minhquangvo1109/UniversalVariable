@@ -33,7 +33,7 @@ window.universal_variable = {
 * **Read the specification carefully and make sure you know exactly what value to store against each key.**  Because our specification is very wide-ranging, you may find similar (but different) properties under different keys - for example,  a Product’s `unit_price` does not include discounts, but its `unit_sale_price` does.
 * **Use valid JSON:** this includes enclosing strings in quotes and avoiding trailing commas.  You may find it helpful to use an online tool such as JSONLint.com to validate your code.
 * **Use the correct JavaScript object types** as defined in the specification - for example, prices should always be unquoted JavaScript numbers.
-* **Declare `window.universal_variable` as high up in the page as possible**, so it can be used by other JavaScript code.
+* **Declare `window.universal_variable` as high up in the page as possible**, above QuBit OpenTag or any other third party tracking tool, so that other code can use your universal variable.
 * **Include the Universal Variable version number in your JavaScript code**, so you can be prepared for future updates to the Universal Variable standard.
 
 **DON’T**:
