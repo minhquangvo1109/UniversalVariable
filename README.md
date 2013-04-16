@@ -396,7 +396,7 @@ window.universal_variable = {
 			"city": "London",
 			"state": "London",
 			"postcode": "SW1 1AB",
-			"country": "GB",
+			"country": "GB"
 		},
 
 		"billing": {
@@ -405,7 +405,7 @@ window.universal_variable = {
 			"city": "London",
 			"state": "London",
 			"postcode": "SW1 1AB",
-			"country": "GB",
+			"country": "GB"
 		},
 
 		"line_items": [LineItem, LineItem, LineItem, ...]
