@@ -72,7 +72,7 @@ universal_variable can contain any of the following properties:
 	<tr><td>transaction</td><td><a href="#transaction">Transaction object</a></td><td>A transaction that has <i>just completed</i> (if this is the first page view served to the user since they completed the transaction).</td></tr>
 	<tr><td>listing</td><td><a href="#listing">Listing object</a></td><td>Multiple products that are present on a page, excluding recommendations (e.g. search results, or a product category page).</td></tr>
 	<tr><td>recommendation</td><td><a href="#recommendation">Recommendation object</a></td><td>Products that are recommended to the user on this page.</td></tr>
-	<tr><td>events</td><td><a href="#eventlist">EventList object</a></td><td>Identifies events that have just occurred.</td></tr>
+	<tr><td>events</td><td>Array of <a href="#events">Event</a> objects</td><td>Contains the events that have occurred on the page.</td></tr>
 	<tr><td>version</td><td>String</td><td>Which version of this standard is being used.</td></tr>
 </table>
 
@@ -467,15 +467,6 @@ window.universal_variable = {
 }
 ```
 
-## EventList
-
-The Eventlist object wraps an array of [Event](#event) objects.
-
-Properties:
-
-<table><tr><th>Property</th><th>JSON key</th><th>Type</th><th>Description</th></tr>
-<tr><td>EventList Items</td><td>items</td><td>Array of <a href="#event">Event</a> objects</td><td>The events which have happened since the last page view, or during the current page view.</td></tr>
-</table>
 
 ## Event
 
