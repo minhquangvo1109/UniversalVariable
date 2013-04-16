@@ -72,7 +72,7 @@ universal_variable can contain any of the following properties:
 	<tr><td>transaction</td><td><a href="#transaction">Transaction object</a></td><td>A transaction that has <i>just completed</i> (if this is the first page view served to the user since they completed the transaction).</td></tr>
 	<tr><td>listing</td><td><a href="#listing">Listing object</a></td><td>Multiple products that are present on a page, excluding recommendations (e.g. search results, or a product category page).</td></tr>
 	<tr><td>recommendation</td><td><a href="#recommendation">Recommendation object</a></td><td>Products that are recommended to the user on this page.</td></tr>
-	<tr><td>events</td><td><a href="#events">Array</a></td><td>Contains the events that have occurred on the page.</td></tr>
+	<tr><td>events</td><td><a href="#events">Events array</a></td><td>Contains the events that have occurred on the page.</td></tr>
 	<tr><td>version</td><td>String</td><td>Which version of this standard is being used.</td></tr>
 </table>
 
