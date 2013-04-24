@@ -486,7 +486,7 @@ Example:
 ```javascript
 window.universal_variable = {
 	"events": [{
-		"name": "newsletter_signup",
+		"type": "newsletter_signup",
 		"cause": "checkout_popup"
 	}]
 }
