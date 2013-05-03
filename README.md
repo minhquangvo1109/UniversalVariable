@@ -91,7 +91,7 @@ A very simple example of a universal_variable object would be:
 ``` javascript
 window.universal_variable = {
 	"user": {
-		"returning": "true"
+		"returning": true
 	},
 	"page": {
 		"category": "home"
