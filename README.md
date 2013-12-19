@@ -1,6 +1,6 @@
 ## We've moved!
 
-We've been working hard to update the Universal Variable Specification. Version 1.1.1 (Janurary 2013 release) is frozen below - if you've been directed here by one of our technology partners, be aware their documentation may refer to this version. 
+We've been working hard to update the Universal Variable Specification. Version 1.1.1 (January 2013 release) is frozen below - if you've been directed here by one of our technology partners, be aware their documentation may refer to this version. 
 
 Otherwise, visit our new [Universal Data Layer](http://tools.qubitproducts.com/uv/developers/) microsite which includes:
 
@@ -8,7 +8,6 @@ Otherwise, visit our new [Universal Data Layer](http://tools.qubitproducts.com/u
 * A useful validation tool to flag up issues in your code
 * Best practice guides and support
 
-Please fire off comments and suggestions for Universal Variable to our product team through [our support portal](http://support.qubitproducts.com/customer/portal/emails/new).
 
 [http://tools.qubitproducts.com/uv/developers/](http://tools.qubitproducts.com/uv/developers/)
 
