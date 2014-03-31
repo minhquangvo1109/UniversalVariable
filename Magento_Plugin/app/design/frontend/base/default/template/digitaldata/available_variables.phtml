@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var $this DigitalData_Block_AvailableVariables
+ * */
+?>
+<script type="text/javascript">
+    window.digitalData = window.digitalData || {};
+    window.digitalData.pageInstanceID = '<?php echo $this->getPageInstanceId() ?>';
+    window.digitalData.page           = <?php  echo Mage::helper('core')->jsonEncode($this->getPageInformation()) ?>;
+    window.digitalData.event          = <?php  echo Mage::helper('core')->jsonEncode($this->getEvents()) ?>;
+    window.digitalData.user           = <?php  echo Mage::helper('core')->jsonEncode($this->getUserInformation()) ?>;
+    window.digitalData.product        = <?php  echo Mage::helper('core')->jsonEncode($this->getProductInformation()) ?>;
+    window.digitalData.cart           = <?php  echo Mage::helper('core')->jsonEncode($this->getCartInformation()) ?>;
+    window.digitalData.transaction    = <?php  echo Mage::helper('core')->jsonEncode($this->getTransactionInformation()) ?>;
+</script>

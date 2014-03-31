@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+  <config>
+    <modules>
+      <DigitalData>
+        <version>0.0.1</version>
+      </DigitalData>
+    </modules>
+
+    <global>
+      <models>
+          <digitaldata>
+            <class>DigitalData_Model</class>
+          </digitaldata>
+      </models>
+      <helpers>
+        <digitaldata>
+          <class>DigitalData_Helper</class>
+        </digitaldata>
+      </helpers>
+      <blocks>
+          <digitaldata>
+            <class>DigitalData_Block</class>
+          </digitaldata>
+      </blocks>
+    </global>
+
+    <frontend>
+        <!-- Layout -->
+        <layout>
+        <updates>
+          <digitaldata>
+            <file>digitaldata/available_variables.xml</file>
+          </digitaldata>
+        </updates>
+        </layout>
+
+        <!-- Events -->
+        <events>
+            <!-- Customer -->
+            <customer_login>
+                <observers>
+                    <digitaldata_customer_login>
+                        <class>digitaldata/observer</class>
+                        <method>customerLogin</method>
+                    </digitaldata_customer_login>
+                </observers>
+            </customer_login>
+    
+            <!-- Cart -->
+            <sales_quote_item_save_after>
+                <observers>
+                    <digitaldata_sales_quote_item_save_after>
+                        <class>digitaldata/observer</class>
+                        <method>salesQuoteItemSaveAfter</method>
+                    </digitaldata_sales_quote_item_save_after>
+                </observers>
+            </sales_quote_item_save_after>
+            <sales_quote_item_delete_after>
+                <observers>
+                    <digitaldata_sales_quote_item_delete_after>
+                        <class>digitaldata/observer</class>
+                        <method>salesQuoteItemDeleteAfter</method>
+                    </digitaldata_sales_quote_item_delete_after>
+                </observers>
+            </sales_quote_item_delete_after>
+            
+            <!-- Newsletter Subscriber -->
+            <newsletter_subscriber_save_after>
+                <observers>
+                    <digitaldata_newsletter_subscribe_observer>
+                        <class>digitaldata/observer</class>
+                        <method>subscribeCustomer</method>
+                    </digitaldata_newsletter_subscribe_observer>
+                </observers>
+            </newsletter_subscriber_save_after>
+            <newsletter_subscriber_delete_after>
+                <observers>
+                    <digitaldata_newsletter_unsubscribe_observer>
+                        <class>digitaldata/observer</class>
+                        <method>unsubscribeCustomer</method>
+                    </digitaldata_newsletter_unsubscribe_observer>
+                </observers>
+            </newsletter_subscriber_delete_after>
+    
+            <!-- Customer -->
+            <customer_save_after>
+                <observers>
+                    <digitaldata_customer_creation_observer>
+                        <class>digitaldata/observer</class>
+                        <method>createCustomer</method>
+                    </digitaldata_customer_creation_observer>
+                </observers>
+            </customer_save_after>
+        </events>
+    </frontend>
+
+    <!-- Admin Configuration Default Values -->
+    <default>
+    </default>
+</config>
